@@ -23,7 +23,7 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-  [ "CY8CKIT-062-BLE BSP", "index.html", [
+  [ "CY8CKIT-062S4 BSP", "index.html", [
     [ "BSP Overview", "md_source_bsps_mt_bsp_user_guide.html", null ],
     [ "BSP Settings", "md_bsp_settings.html", null ],
     [ "BSP API Reference", "modules.html", "modules" ]
