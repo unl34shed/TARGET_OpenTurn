@@ -1,14 +1,12 @@
 ################################################################################
-# \file CY8CKIT-062S4.mk
+# \file OpenTurn.mk
 #
 # \brief
-# Define the CY8CKIT-062S4 target.
+# Define the OpenTurn target.
 #
 ################################################################################
 # \copyright
-# Copyright 2018-2021 Cypress Semiconductor Corporation (an Infineon company) or
-# an affiliate of Cypress Semiconductor Corporation
-#
+# Copyright 2018-2021 Cypress Semiconductor Corporation
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -32,10 +30,10 @@ endif
 include $(dir $(lastword $(MAKEFILE_LIST)))/locate_recipe.mk
 
 # MCU device selection
-#    Changing the device should be done using "make bsp" or "make update_bsp" with the "DEVICE_GEN"
+#    Changing the device should be done using “make bsp” or “make update_bsp” with the “DEVICE_GEN”
 #    variable set to the new MCU. If you change the device manually here you must also update the
 #    design.modus file and re-run the device configurator.
-DEVICE:=CY8C6244LQI-S4D92
+DEVICE:=CY8C6244AZI-S4D92
 # Default target core to CM4 if not already set
 CORE?=CM4
 # Basic architecture specific components

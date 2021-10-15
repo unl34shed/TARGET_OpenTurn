@@ -4,13 +4,13 @@
 * Description:
 * System configuration
 * This file was automatically generated and should not be modified.
-* Tools Package 2.2.0.2790
-* latest-v2.X 2.0.0.6211
-* personalities 3.0.0.0
-* udd 3.0.0.562
+* Tools Package 2.3.0.4276
+* mtb-pdl-cat1 2.2.1.9614
+* personalities 4.0.0.0
+* udd 3.0.0.1125
 *
 ********************************************************************************
-* Copyright 2020 Cypress Semiconductor Corporation
+* Copyright 2021 Cypress Semiconductor Corporation
 * SPDX-License-Identifier: Apache-2.0
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -34,27 +34,19 @@
 #define CY_CFG_SYSCLK_FLL_ERROR 4
 #define CY_CFG_SYSCLK_WCO_ERROR 5
 #define CY_CFG_SYSCLK_CLKALTSYSTICK_ENABLED 1
-#define CY_CFG_SYSCLK_CLKALTSYSTICK_SOURCE CY_SYSTICK_CLOCK_SOURCE_CLK_LF
+#define CY_CFG_SYSCLK_CLKALTSYSTICK_SOURCE CY_SYSTICK_CLOCK_SOURCE_CLK_TIMER
 #define CY_CFG_SYSCLK_CLKBAK_ENABLED 1
-#define CY_CFG_SYSCLK_CLKBAK_SOURCE CY_SYSCLK_BAK_IN_WCO
+#define CY_CFG_SYSCLK_CLKBAK_SOURCE CY_SYSCLK_BAK_IN_CLKLF
 #define CY_CFG_SYSCLK_CLKFAST_ENABLED 1
 #define CY_CFG_SYSCLK_CLKFAST_DIVIDER 0
-#define CY_CFG_SYSCLK_FLL_ENABLED 1
-#define CY_CFG_SYSCLK_FLL_MULT 500U
-#define CY_CFG_SYSCLK_FLL_REFDIV 20U
-#define CY_CFG_SYSCLK_FLL_CCO_RANGE CY_SYSCLK_FLL_CCO_RANGE4
-#define CY_CFG_SYSCLK_FLL_ENABLE_OUTDIV true
-#define CY_CFG_SYSCLK_FLL_LOCK_TOLERANCE 10U
-#define CY_CFG_SYSCLK_FLL_IGAIN 9U
-#define CY_CFG_SYSCLK_FLL_PGAIN 5U
-#define CY_CFG_SYSCLK_FLL_SETTLING_COUNT 8U
-#define CY_CFG_SYSCLK_FLL_OUTPUT_MODE CY_SYSCLK_FLLPLL_OUTPUT_OUTPUT
-#define CY_CFG_SYSCLK_FLL_CCO_FREQ 355U
-#define CY_CFG_SYSCLK_FLL_OUT_FREQ 100000000
 #define CY_CFG_SYSCLK_CLKHF0_ENABLED 1
 #define CY_CFG_SYSCLK_CLKHF0_DIVIDER CY_SYSCLK_CLKHF_NO_DIVIDE
 #define CY_CFG_SYSCLK_CLKHF0_FREQ_MHZ 100UL
-#define CY_CFG_SYSCLK_CLKHF0_CLKPATH CY_SYSCLK_CLKHF_IN_CLKPATH0
+#define CY_CFG_SYSCLK_CLKHF0_CLKPATH CY_SYSCLK_CLKHF_IN_CLKPATH1
+#define CY_CFG_SYSCLK_CLKHF2_ENABLED 1
+#define CY_CFG_SYSCLK_CLKHF2_DIVIDER CY_SYSCLK_CLKHF_NO_DIVIDE
+#define CY_CFG_SYSCLK_CLKHF2_FREQ_MHZ 8UL
+#define CY_CFG_SYSCLK_CLKHF2_CLKPATH CY_SYSCLK_CLKHF_IN_CLKPATH0
 #define CY_CFG_SYSCLK_ILO_ENABLED 1
 #define CY_CFG_SYSCLK_ILO_HIBERNATE true
 #define CY_CFG_SYSCLK_IMO_ENABLED 1
@@ -77,23 +69,20 @@
 #define CY_CFG_SYSCLK_CLKPERI_ENABLED 1
 #define CY_CFG_SYSCLK_CLKPERI_DIVIDER 0
 #define CY_CFG_SYSCLK_PLL0_ENABLED 1
-#define CY_CFG_SYSCLK_PLL0_FEEDBACK_DIV 30
-#define CY_CFG_SYSCLK_PLL0_REFERENCE_DIV 1
-#define CY_CFG_SYSCLK_PLL0_OUTPUT_DIV 5
+#define CY_CFG_SYSCLK_PLL0_FEEDBACK_DIV 100
+#define CY_CFG_SYSCLK_PLL0_REFERENCE_DIV 2
+#define CY_CFG_SYSCLK_PLL0_OUTPUT_DIV 4
 #define CY_CFG_SYSCLK_PLL0_LF_MODE false
 #define CY_CFG_SYSCLK_PLL0_OUTPUT_MODE CY_SYSCLK_FLLPLL_OUTPUT_AUTO
-#define CY_CFG_SYSCLK_PLL0_OUTPUT_FREQ 48000000
+#define CY_CFG_SYSCLK_PLL0_OUTPUT_FREQ 100000000
+#define CY_CFG_SYSCLK_CLKPUMP_ENABLED 1
+#define CY_CFG_SYSCLK_CLKPUMP_SOURCE CY_SYSCLK_PUMP_IN_CLKPATH1
+#define CY_CFG_SYSCLK_CLKPUMP_DIVIDER CY_SYSCLK_PUMP_DIV_4
 #define CY_CFG_SYSCLK_CLKSLOW_ENABLED 1
 #define CY_CFG_SYSCLK_CLKSLOW_DIVIDER 0
 #define CY_CFG_SYSCLK_CLKTIMER_ENABLED 1
-#define CY_CFG_SYSCLK_CLKTIMER_SOURCE CY_SYSCLK_CLKTIMER_IN_IMO
+#define CY_CFG_SYSCLK_CLKTIMER_SOURCE CY_SYSCLK_CLKTIMER_IN_HF0_NODIV
 #define CY_CFG_SYSCLK_CLKTIMER_DIVIDER 0U
-#define CY_CFG_SYSCLK_WCO_ENABLED 1
-#define CY_CFG_SYSCLK_WCO_IN_PRT GPIO_PRT0
-#define CY_CFG_SYSCLK_WCO_IN_PIN 0U
-#define CY_CFG_SYSCLK_WCO_OUT_PRT GPIO_PRT0
-#define CY_CFG_SYSCLK_WCO_OUT_PIN 1U
-#define CY_CFG_SYSCLK_WCO_BYPASS CY_SYSCLK_WCO_NOT_BYPASSED
 #define CY_CFG_PWR_ENABLED 1
 #define CY_CFG_PWR_INIT 1
 #define CY_CFG_PWR_USING_PMIC 0
@@ -101,25 +90,11 @@
 #define CY_CFG_PWR_LDO_VOLTAGE CY_SYSPM_LDO_VOLTAGE_LP
 #define CY_CFG_PWR_USING_ULP 0
 #define CY_CFG_PWR_REGULATOR_MODE_MIN false
+#define CY_CFG_PWR_BKP_ERROR 6
 
 #if defined (CY_DEVICE_SECURE) && (CY_CPU_CORTEX_M4)
 	static cy_stc_pra_system_config_t srss_0_clock_0_secureConfig;
 #endif //defined (CY_DEVICE_SECURE) && (CY_CPU_CORTEX_M4)
-#if ((!CY_CPU_CORTEX_M4) || (!defined(CY_DEVICE_SECURE)))
-	static const cy_stc_fll_manual_config_t srss_0_clock_0_fll_0_fllConfig = 
-	{
-		.fllMult = 500U,
-		.refDiv = 20U,
-		.ccoRange = CY_SYSCLK_FLL_CCO_RANGE4,
-		.enableOutputDiv = true,
-		.lockTolerance = 10U,
-		.igain = 9U,
-		.pgain = 5U,
-		.settlingCount = 8U,
-		.outputMode = CY_SYSCLK_FLLPLL_OUTPUT_OUTPUT,
-		.cco_Freq = 355U,
-	};
-#endif //((!CY_CPU_CORTEX_M4) || (!defined(CY_DEVICE_SECURE)))
 #if defined (CY_USING_HAL)
 	const cyhal_resource_inst_t srss_0_clock_0_pathmux_0_obj = 
 	{
@@ -163,21 +138,21 @@
 #if ((!CY_CPU_CORTEX_M4) || (!defined(CY_DEVICE_SECURE)))
 	static const cy_stc_pll_manual_config_t srss_0_clock_0_pll_0_pllConfig = 
 	{
-		.feedbackDiv = 30,
-		.referenceDiv = 1,
-		.outputDiv = 5,
+		.feedbackDiv = 100,
+		.referenceDiv = 2,
+		.outputDiv = 4,
 		.lfMode = false,
 		.outputMode = CY_SYSCLK_FLLPLL_OUTPUT_AUTO,
 	};
 #endif //((!CY_CPU_CORTEX_M4) || (!defined(CY_DEVICE_SECURE)))
 
-__WEAK void cycfg_ClockStartupError(uint32_t error)
+__WEAK void __NO_RETURN cycfg_ClockStartupError(uint32_t error)
 {
     (void)error; /* Suppress the compiler warning */
     while(1);
 }
 #if defined (CY_DEVICE_SECURE) && (CY_CPU_CORTEX_M4)
-	__STATIC_INLINE void init_cycfg_secure_struct(cy_stc_pra_system_config_t * secure_config)
+	void init_cycfg_secure_struct(cy_stc_pra_system_config_t * secure_config)
 	{
 	    #ifdef CY_CFG_PWR_ENABLED
 	        secure_config->powerEnable = CY_CFG_PWR_ENABLED;
@@ -651,13 +626,13 @@ __WEAK void cycfg_ClockStartupError(uint32_t error)
 #if ((!CY_CPU_CORTEX_M4) || (!defined(CY_DEVICE_SECURE)))
 	__STATIC_INLINE void Cy_SysClk_ClkAltSysTickInit()
 	{
-	    Cy_SysTick_SetClockSource(CY_SYSTICK_CLOCK_SOURCE_CLK_LF);
+	    Cy_SysTick_SetClockSource(CY_SYSTICK_CLOCK_SOURCE_CLK_TIMER);
 	}
 #endif //((!CY_CPU_CORTEX_M4) || (!defined(CY_DEVICE_SECURE)))
 #if ((!CY_CPU_CORTEX_M4) || (!defined(CY_DEVICE_SECURE)))
 	__STATIC_INLINE void Cy_SysClk_ClkBakInit()
 	{
-	    Cy_SysClk_ClkBakSetSource(CY_SYSCLK_BAK_IN_WCO);
+	    Cy_SysClk_ClkBakSetSource(CY_SYSCLK_BAK_IN_CLKLF);
 	}
 #endif //((!CY_CPU_CORTEX_M4) || (!defined(CY_DEVICE_SECURE)))
 #if ((!CY_CPU_CORTEX_M4) || (!defined(CY_DEVICE_SECURE)))
@@ -667,23 +642,18 @@ __WEAK void cycfg_ClockStartupError(uint32_t error)
 	}
 #endif //((!CY_CPU_CORTEX_M4) || (!defined(CY_DEVICE_SECURE)))
 #if ((!CY_CPU_CORTEX_M4) || (!defined(CY_DEVICE_SECURE)))
-	__STATIC_INLINE void Cy_SysClk_FllInit()
-	{
-	    if (CY_SYSCLK_SUCCESS != Cy_SysClk_FllManualConfigure(&srss_0_clock_0_fll_0_fllConfig))
-	    {
-	        cycfg_ClockStartupError(CY_CFG_SYSCLK_FLL_ERROR);
-	    }
-	    if (CY_SYSCLK_SUCCESS != Cy_SysClk_FllEnable(200000UL))
-	    {
-	        cycfg_ClockStartupError(CY_CFG_SYSCLK_FLL_ERROR);
-	    }
-	}
-#endif //((!CY_CPU_CORTEX_M4) || (!defined(CY_DEVICE_SECURE)))
-#if ((!CY_CPU_CORTEX_M4) || (!defined(CY_DEVICE_SECURE)))
 	__STATIC_INLINE void Cy_SysClk_ClkHf0Init()
 	{
 	    Cy_SysClk_ClkHfSetSource(0U, CY_CFG_SYSCLK_CLKHF0_CLKPATH);
 	    Cy_SysClk_ClkHfSetDivider(0U, CY_SYSCLK_CLKHF_NO_DIVIDE);
+	}
+#endif //((!CY_CPU_CORTEX_M4) || (!defined(CY_DEVICE_SECURE)))
+#if ((!CY_CPU_CORTEX_M4) || (!defined(CY_DEVICE_SECURE)))
+	__STATIC_INLINE void Cy_SysClk_ClkHf2Init()
+	{
+	    Cy_SysClk_ClkHfSetSource(CY_CFG_SYSCLK_CLKHF2, CY_CFG_SYSCLK_CLKHF2_CLKPATH);
+	    Cy_SysClk_ClkHfSetDivider(CY_CFG_SYSCLK_CLKHF2, CY_SYSCLK_CLKHF_NO_DIVIDE);
+	    Cy_SysClk_ClkHfEnable(CY_CFG_SYSCLK_CLKHF2);
 	}
 #endif //((!CY_CPU_CORTEX_M4) || (!defined(CY_DEVICE_SECURE)))
 #if ((!CY_CPU_CORTEX_M4) || (!defined(CY_DEVICE_SECURE)))
@@ -698,7 +668,7 @@ __WEAK void cycfg_ClockStartupError(uint32_t error)
 	__STATIC_INLINE void Cy_SysClk_ClkLfInit()
 	{
 	    /* The WDT is unlocked in the default startup code */
-	    Cy_SysClk_ClkLfSetSource(CY_SYSCLK_CLKLF_IN_WCO);
+	    Cy_SysClk_ClkLfSetSource(CY_SYSCLK_CLKLF_IN_ILO);
 	}
 #endif //((!CY_CPU_CORTEX_M4) || (!defined(CY_DEVICE_SECURE)))
 #if ((!CY_CPU_CORTEX_M4) || (!defined(CY_DEVICE_SECURE)))
@@ -751,6 +721,15 @@ __WEAK void cycfg_ClockStartupError(uint32_t error)
 	}
 #endif //((!CY_CPU_CORTEX_M4) || (!defined(CY_DEVICE_SECURE)))
 #if ((!CY_CPU_CORTEX_M4) || (!defined(CY_DEVICE_SECURE)))
+	__STATIC_INLINE void Cy_SysClk_ClkPumpInit()
+	{
+	    Cy_SysClk_ClkPumpDisable();
+	    Cy_SysClk_ClkPumpSetSource(CY_SYSCLK_PUMP_IN_CLKPATH1);
+	    Cy_SysClk_ClkPumpSetDivider(CY_SYSCLK_PUMP_DIV_4);
+	    Cy_SysClk_ClkPumpEnable();
+	}
+#endif //((!CY_CPU_CORTEX_M4) || (!defined(CY_DEVICE_SECURE)))
+#if ((!CY_CPU_CORTEX_M4) || (!defined(CY_DEVICE_SECURE)))
 	__STATIC_INLINE void Cy_SysClk_ClkSlowInit()
 	{
 	    Cy_SysClk_ClkSlowSetDivider(0U);
@@ -760,56 +739,58 @@ __WEAK void cycfg_ClockStartupError(uint32_t error)
 	__STATIC_INLINE void Cy_SysClk_ClkTimerInit()
 	{
 	    Cy_SysClk_ClkTimerDisable();
-	    Cy_SysClk_ClkTimerSetSource(CY_SYSCLK_CLKTIMER_IN_IMO);
+	    Cy_SysClk_ClkTimerSetSource(CY_SYSCLK_CLKTIMER_IN_HF0_NODIV);
 	    Cy_SysClk_ClkTimerSetDivider(0U);
 	    Cy_SysClk_ClkTimerEnable();
-	}
-#endif //((!CY_CPU_CORTEX_M4) || (!defined(CY_DEVICE_SECURE)))
-#if ((!CY_CPU_CORTEX_M4) || (!defined(CY_DEVICE_SECURE)))
-	__STATIC_INLINE void Cy_SysClk_WcoInit()
-	{
-	    (void)Cy_GPIO_Pin_FastInit(GPIO_PRT0, 0U, 0x00U, 0x00U, HSIOM_SEL_GPIO);
-	    (void)Cy_GPIO_Pin_FastInit(GPIO_PRT0, 1U, 0x00U, 0x00U, HSIOM_SEL_GPIO);
-	    if (CY_SYSCLK_SUCCESS != Cy_SysClk_WcoEnable(1000000UL))
-	    {
-	        cycfg_ClockStartupError(CY_CFG_SYSCLK_WCO_ERROR);
-	    }
 	}
 #endif //((!CY_CPU_CORTEX_M4) || (!defined(CY_DEVICE_SECURE)))
 #if ((!CY_CPU_CORTEX_M4) || (!defined(CY_DEVICE_SECURE)))
 	__STATIC_INLINE void init_cycfg_power(void)
 	{
 	    /* Reset the Backup domain on POR, XRES, BOD only if Backup domain is supplied by VDDD */
-	    #if (CY_CFG_PWR_VBACKUP_USING_VDDD)
-	        #ifdef CY_CFG_SYSCLK_ILO_ENABLED
-	            if (0u == Cy_SysLib_GetResetReason() /* POR, XRES, or BOD */)
-	            {
-	                Cy_SysLib_ResetBackupDomain();
-	                Cy_SysClk_IloDisable();
-	                Cy_SysClk_IloInit();
-	            }
-	        #endif /* CY_CFG_SYSCLK_ILO_ENABLED */
-	    #endif /* CY_CFG_PWR_VBACKUP_USING_VDDD */
-	    /* Configure core regulator */
-	    #if !((CY_CPU_CORTEX_M4) && (defined(CY_DEVICE_SECURE)))
-	        #if CY_CFG_PWR_USING_LDO
-	            Cy_SysPm_LdoSetVoltage(CY_SYSPM_LDO_VOLTAGE_LP);
-	        #else
-	            Cy_SysPm_BuckEnable(CY_SYSPM_BUCK_OUT1_VOLTAGE_LP);
-	        #endif /* CY_CFG_PWR_USING_LDO */
-	        #if CY_CFG_PWR_REGULATOR_MODE_MIN
-	            Cy_SysPm_SystemSetMinRegulatorCurrent();
-	        #else
-	            Cy_SysPm_SystemSetNormalRegulatorCurrent();
-	        #endif /* CY_CFG_PWR_REGULATOR_MODE_MIN */
-	    #endif /* !((CY_CPU_CORTEX_M4) && (defined(CY_DEVICE_SECURE))) */
-	    /* Configure PMIC */
-	    Cy_SysPm_UnlockPmic();
-	    #if CY_CFG_PWR_USING_PMIC
-	        Cy_SysPm_PmicEnableOutput();
-	    #else
-	        Cy_SysPm_PmicDisableOutput();
-	    #endif /* CY_CFG_PWR_USING_PMIC */
+	     #if (CY_CFG_PWR_VBACKUP_USING_VDDD)
+	         #ifdef CY_CFG_SYSCLK_ILO_ENABLED
+	             if (0u == Cy_SysLib_GetResetReason() /* POR, XRES, or BOD */)
+	             {
+	             #if CY_CFG_SYSCLK_WCO_ENABLED
+	                 uint32_t wcoTrim = Cy_SysLib_GetWcoTrim();
+	                 if (CY_SYSLIB_SUCCESS != Cy_SysLib_ResetBackupDomain())
+	                 {
+	                     Cy_SysLib_DelayUs(1U);
+	                     if (CY_SYSLIB_SUCCESS != Cy_SysLib_GetResetStatus())
+	                     {
+	                         cycfg_ClockStartupError(CY_CFG_PWR_BKP_ERROR);
+	                     }
+	                 }
+	                 Cy_SysLib_SetWcoTrim(wcoTrim);
+	             #else /* CY_CFG_SYSCLK_WCO_ENABLED */
+	                 (void) Cy_SysLib_ResetBackupDomain();
+	             #endif /* CY_CFG_SYSCLK_WCO_ENABLED */
+	                 Cy_SysClk_IloDisable();
+	                 Cy_SysClk_IloInit();
+	             }
+	         #endif /* CY_CFG_SYSCLK_ILO_ENABLED */
+	     #endif /* CY_CFG_PWR_VBACKUP_USING_VDDD */
+	     /* Configure core regulator */
+	     #if !((CY_CPU_CORTEX_M4) && (defined(CY_DEVICE_SECURE)))
+	         #if CY_CFG_PWR_USING_LDO
+	             Cy_SysPm_LdoSetVoltage(CY_SYSPM_LDO_VOLTAGE_LP);
+	         #else
+	             Cy_SysPm_BuckEnable(CY_SYSPM_BUCK_OUT1_VOLTAGE_LP);
+	         #endif /* CY_CFG_PWR_USING_LDO */
+	         #if CY_CFG_PWR_REGULATOR_MODE_MIN
+	             Cy_SysPm_SystemSetMinRegulatorCurrent();
+	         #else
+	             Cy_SysPm_SystemSetNormalRegulatorCurrent();
+	         #endif /* CY_CFG_PWR_REGULATOR_MODE_MIN */
+	     #endif /* !((CY_CPU_CORTEX_M4) && (defined(CY_DEVICE_SECURE))) */
+	     /* Configure PMIC */
+	     Cy_SysPm_UnlockPmic();
+	     #if CY_CFG_PWR_USING_PMIC
+	         Cy_SysPm_PmicEnableOutput();
+	     #else
+	         Cy_SysPm_PmicDisableOutput();
+	     #endif /* CY_CFG_PWR_USING_PMIC */
 	}
 #endif //((!CY_CPU_CORTEX_M4) || (!defined(CY_DEVICE_SECURE)))
 
@@ -819,23 +800,23 @@ void init_cycfg_system(void)
 	#if ((CY_CPU_CORTEX_M4) && (defined(CY_DEVICE_SECURE)))
 	    cy_en_pra_status_t configStatus;
 	    init_cycfg_secure_struct(&srss_0_clock_0_secureConfig);
-	    #if ((CY_CFG_SYSCLK_CLKPATH0_SOURCE_NUM != 0UL) && (CY_CFG_SYSCLK_CLKHF0_CLKPATH_NUM == 0UL))
-	        #error Configuration Error : ECO, WCO, ALTHF, EXTCLK, ILO, PILO cannot drive HF0.
+	    #if (((CY_CFG_SYSCLK_CLKPATH0_SOURCE_NUM >= 3UL) && (CY_CFG_SYSCLK_CLKPATH0_SOURCE_NUM <= 5UL))  && (CY_CFG_SYSCLK_CLKHF0_CLKPATH_NUM == 0UL))
+	        #error Configuration Error : ALTHF, ILO, PILO cannot drive HF0.
 	    #endif
-	    #if ((CY_CFG_SYSCLK_CLKPATH1_SOURCE_NUM != 0UL) && (CY_CFG_SYSCLK_CLKHF0_CLKPATH_NUM == 1UL))
-	        #error Configuration Error : ECO, WCO, ALTHF, EXTCLK, ILO, PILO cannot drive HF0.
+	    #if (((CY_CFG_SYSCLK_CLKPATH1_SOURCE_NUM >= 3UL) && (CY_CFG_SYSCLK_CLKPATH1_SOURCE_NUM <= 5UL)) && (CY_CFG_SYSCLK_CLKHF0_CLKPATH_NUM == 1UL))
+	        #error Configuration Error : ALTHF, ILO, PILO cannot drive HF0.
 	    #endif
-	    #if ((CY_CFG_SYSCLK_CLKPATH2_SOURCE_NUM != 0UL) && (CY_CFG_SYSCLK_CLKHF0_CLKPATH_NUM == 2UL))
-	        #error Configuration Error : ECO, WCO, ALTHF, EXTCLK, ILO, PILO cannot drive HF0.
+	    #if (((CY_CFG_SYSCLK_CLKPATH2_SOURCE_NUM >= 3UL) && (CY_CFG_SYSCLK_CLKPATH2_SOURCE_NUM <= 5UL)) && (CY_CFG_SYSCLK_CLKHF0_CLKPATH_NUM == 2UL))
+	        #error Configuration Error : ALTHF, ILO, PILO cannot drive HF0.
 	    #endif
-	    #if ((CY_CFG_SYSCLK_CLKPATH3_SOURCE_NUM != 0UL) && (CY_CFG_SYSCLK_CLKHF0_CLKPATH_NUM == 3UL))
-	        #error Configuration Error : ECO, WCO, ALTHF, EXTCLK, ILO, PILO cannot drive HF0.
+	    #if (((CY_CFG_SYSCLK_CLKPATH3_SOURCE_NUM >= 3UL) && (CY_CFG_SYSCLK_CLKPATH3_SOURCE_NUM <= 5UL)) && (CY_CFG_SYSCLK_CLKHF0_CLKPATH_NUM == 3UL))
+	        #error Configuration Error : ALTHF, ILO, PILO cannot drive HF0.
 	    #endif
-	    #if ((CY_CFG_SYSCLK_CLKPATH4_SOURCE_NUM != 0UL) && (CY_CFG_SYSCLK_CLKHF0_CLKPATH_NUM == 4UL))
-	        #error Configuration Error : ECO, WCO, ALTHF, EXTCLK, ILO, PILO cannot drive HF0.
+	    #if (((CY_CFG_SYSCLK_CLKPATH4_SOURCE_NUM >= 3UL) && (CY_CFG_SYSCLK_CLKPATH4_SOURCE_NUM <= 5UL)) && (CY_CFG_SYSCLK_CLKHF0_CLKPATH_NUM == 4UL))
+	        #error Configuration Error : ALTHF, ILO, PILO cannot drive HF0.
 	    #endif
-	    #if ((CY_CFG_SYSCLK_CLKPATH5_SOURCE_NUM != 0UL) && (CY_CFG_SYSCLK_CLKHF0_CLKPATH_NUM == 5UL))
-	        #error Configuration Error : ECO, WCO, ALTHF, EXTCLK, ILO, PILO cannot drive HF0.
+	    #if (((CY_CFG_SYSCLK_CLKPATH5_SOURCE_NUM >= 3UL) && (CY_CFG_SYSCLK_CLKPATH5_SOURCE_NUM <= 5UL)) && (CY_CFG_SYSCLK_CLKHF0_CLKPATH_NUM == 5UL))
+	        #error Configuration Error : ALTHF, ILO, PILO cannot drive HF0.
 	    #endif
 	
 	    configStatus = CY_PRA_FUNCTION_CALL_RETURN_PARAM(CY_PRA_MSG_TYPE_SYS_CFG_FUNC,
@@ -1113,6 +1094,10 @@ void init_cycfg_system(void)
 	
 	    #ifndef CY_CFG_SYSCLK_IMO_ENABLED
 	        #error the IMO must be enabled for proper chip operation
+	    #endif
+	
+	    #ifndef CY_CFG_SYSCLK_CLKHF0_ENABLED
+	        #error the CLKHF0 must be enabled for proper chip operation
 	    #endif
 	
 	#endif /* ((CY_CPU_CORTEX_M4) && (defined(CY_DEVICE_SECURE))) */

@@ -1,10 +1,10 @@
-# CY8CKIT-062S4 BSP
+# CY8CKIT-062-BLE BSP
 
 ## Overview
 
-The PSoC 62S4 Pioneer Kit is a low-cost hardware platform that enables design and debug of the PSoC 62S4 Line (CY8C6244LQI-S4D92).
+The PSoC 6 BLE Pioneer Kit is a low-cost hardware platform that enables design and debug of the PSoC 63 Line (CY8C6347BZI-BLD53).
 
-
+![](docs/html/board.png)
 
 To use code from the BSP, simply include a reference to `cybsp.h`.
 
@@ -12,27 +12,20 @@ To use code from the BSP, simply include a reference to `cybsp.h`.
 
 ### Kit Features:
 
-* Delivers dual-cores, with a 150-MHz Arm Cortex-M4 as the primary application processor and a 100-MHz Arm Cortex-M0+ as the secondary processor. 
-* 256-KB Flash and 128-KB SRAM for customer application on CM4
-* One-time-programmable (OTP) 1-Kb eFuse array
-* Two 12-bit 2-Msps SAR ADCs with synchronized sampling, differential and single-ended modes, 16-channel sequencer with result averaging, and Deep Sleep operation 
-* Two opamps with low-power operation modes and Two low-power comparators available in Deep Sleep and Hibernate modes
-* Onboard Thermistor and Ambient Light Sensor. 
+* BLE v5.0
 * Serial memory interface
+* PDM-PCM digital microphone interface
 * Industry-leading CapSense
-* Ambient Light Sensor
-* Thermistor
 
 ### Kit Contents:
 
-* CY8CKIT-062S4 evaluation board
-* USB Type-A to Micro-B cable
-* Quick Start Guide
-* Six jumper wires (5 inches each)
+* CY8CKIT-062-BLE evaluation board
+* E-Ink display shield with an ultra-low-power 2.7" E-ink display, thermistor, 6-axis motion sensor, and digital microphone
+* USB cable
 
 ## BSP Configuration
 
-The BSP has a few hooks that allow its behavior to be configured. Some of these items are enabled by default while others must be explicitly enabled. Items enabled by default are specified in the CY8CKIT-062S4.mk file. The items that are enabled can be changed by creating a custom BSP or by editing the application makefile.
+The BSP has a few hooks that allow its behavior to be configured. Some of these items are enabled by default while others must be explicitly enabled. Items enabled by default are specified in the CY8CKIT-062-BLE.mk file. The items that are enabled can be changed by creating a custom BSP or by editing the application makefile.
 
 Components:
 * Device specific category reference (e.g.: CAT1) - This component, enabled by default, pulls in any device specific code for this board.
@@ -62,19 +55,19 @@ See the [BSP Setttings][settings] for additional board specific configuration se
 
 ## API Reference Manual
 
-The CY8CKIT-062S4 Board Support Package provides a set of APIs to configure, initialize and use the board resources.
+The CY8CKIT-062-BLE Board Support Package provides a set of APIs to configure, initialize and use the board resources.
 
 See the [BSP API Reference Manual][api] for the complete list of the provided interfaces.
 
 ## More information
-* [CY8CKIT-062S4 BSP API Reference Manual][api]
-* [CY8CKIT-062S4 Documentation](http://www.cypress.com/CY8CKIT-062S4)
+* [CY8CKIT-062-BLE BSP API Reference Manual][api]
+* [CY8CKIT-062-BLE Documentation](http://www.cypress.com/documentation/development-kitsboards/psoc-6-ble-pioneer-kit)
 * [Cypress Semiconductor, an Infineon Technologies Company](http://www.cypress.com)
-* [Infineon GitHub](https://github.com/infineon)
+* [Cypress Semiconductor GitHub](https://github.com/cypresssemiconductorco)
 * [ModusToolbox](https://www.cypress.com/products/modustoolbox-software-environment)
 
-[api]: https://infineon.github.io/TARGET_CY8CKIT-062S4/html/modules.html
-[settings]: https://infineon.github.io/TARGET_CY8CKIT-062S4/html/md_bsp_settings.html
+[api]: https://cypresssemiconductorco.github.io/TARGET_CY8CKIT-062-BLE/html/modules.html
+[settings]: https://cypresssemiconductorco.github.io/TARGET_CY8CKIT-062-BLE/html/md_bsp_settings.html
 
 ---
-© Cypress Semiconductor Corporation (an Infineon company) or an affiliate of Cypress Semiconductor Corporation, 2019-2021.
+© Cypress Semiconductor Corporation, 2019-2021.

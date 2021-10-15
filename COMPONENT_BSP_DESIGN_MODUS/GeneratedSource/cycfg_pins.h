@@ -4,13 +4,13 @@
 * Description:
 * Pin configuration
 * This file was automatically generated and should not be modified.
-* Tools Package 2.2.0.2790
-* latest-v2.X 2.0.0.6211
-* personalities 3.0.0.0
-* udd 3.0.0.562
+* Tools Package 2.3.0.4276
+* mtb-pdl-cat1 2.2.1.9614
+* personalities 4.0.0.0
+* udd 3.0.0.1125
 *
 ********************************************************************************
-* Copyright 2020 Cypress Semiconductor Corporation
+* Copyright 2021 Cypress Semiconductor Corporation
 * SPDX-License-Identifier: Apache-2.0
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -31,673 +31,1646 @@
 
 #include "cycfg_notices.h"
 #include "cy_gpio.h"
+#include "cycfg_routing.h"
 #if defined (CY_USING_HAL)
 	#include "cyhal_hwmgr.h"
 #endif //defined (CY_USING_HAL)
-#include "cycfg_routing.h"
+#include "cy_smartio.h"
+#include "cy_sysclk.h"
 
 #if defined(__cplusplus)
 extern "C" {
 #endif
 
-#define CYBSP_WCO_IN_ENABLED 1U
-#define CYBSP_WCO_IN_PORT GPIO_PRT0
-#define CYBSP_WCO_IN_PORT_NUM 0U
-#define CYBSP_WCO_IN_PIN 0U
-#define CYBSP_WCO_IN_NUM 0U
-#define CYBSP_WCO_IN_DRIVEMODE CY_GPIO_DM_ANALOG
-#define CYBSP_WCO_IN_INIT_DRIVESTATE 1
+#define ENCODER_QOAD_B1_ENABLED 1U
+#define ENCODER_QOAD_B1_PORT GPIO_PRT0
+#define ENCODER_QOAD_B1_PORT_NUM 0U
+#define ENCODER_QOAD_B1_PIN 0U
+#define ENCODER_QOAD_B1_NUM 0U
+#define ENCODER_QOAD_B1_DRIVEMODE CY_GPIO_DM_HIGHZ
+#define ENCODER_QOAD_B1_INIT_DRIVESTATE 1
 #ifndef ioss_0_port_0_pin_0_HSIOM
 	#define ioss_0_port_0_pin_0_HSIOM HSIOM_SEL_GPIO
 #endif
-#define CYBSP_WCO_IN_HSIOM ioss_0_port_0_pin_0_HSIOM
-#define CYBSP_WCO_IN_IRQ ioss_interrupts_gpio_0_IRQn
+#define ENCODER_QOAD_B1_HSIOM ioss_0_port_0_pin_0_HSIOM
+#define ENCODER_QOAD_B1_IRQ ioss_interrupts_gpio_0_IRQn
 #if defined (CY_USING_HAL)
-	#define CYBSP_WCO_IN_HAL_PORT_PIN P0_0
+	#define ENCODER_QOAD_B1_HAL_PORT_PIN P0_0
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_WCO_IN P0_0
+	#define ENCODER_QOAD_B1 P0_0
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_WCO_IN_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+	#define ENCODER_QOAD_B1_HAL_IRQ CYHAL_GPIO_IRQ_NONE
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_WCO_IN_HAL_DIR CYHAL_GPIO_DIR_INPUT
+	#define ENCODER_QOAD_B1_HAL_DIR CYHAL_GPIO_DIR_INPUT 
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_WCO_IN_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_ANALOG
+	#define ENCODER_QOAD_B1_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_NONE
 #endif //defined (CY_USING_HAL)
-#define CYBSP_WCO_OUT_ENABLED 1U
-#define CYBSP_WCO_OUT_PORT GPIO_PRT0
-#define CYBSP_WCO_OUT_PORT_NUM 0U
-#define CYBSP_WCO_OUT_PIN 1U
-#define CYBSP_WCO_OUT_NUM 1U
-#define CYBSP_WCO_OUT_DRIVEMODE CY_GPIO_DM_ANALOG
-#define CYBSP_WCO_OUT_INIT_DRIVESTATE 1
+#define ENCODER_QOAD_A1_ENABLED 1U
+#define ENCODER_QOAD_A1_PORT GPIO_PRT0
+#define ENCODER_QOAD_A1_PORT_NUM 0U
+#define ENCODER_QOAD_A1_PIN 1U
+#define ENCODER_QOAD_A1_NUM 1U
+#define ENCODER_QOAD_A1_DRIVEMODE CY_GPIO_DM_HIGHZ
+#define ENCODER_QOAD_A1_INIT_DRIVESTATE 1
 #ifndef ioss_0_port_0_pin_1_HSIOM
 	#define ioss_0_port_0_pin_1_HSIOM HSIOM_SEL_GPIO
 #endif
-#define CYBSP_WCO_OUT_HSIOM ioss_0_port_0_pin_1_HSIOM
-#define CYBSP_WCO_OUT_IRQ ioss_interrupts_gpio_0_IRQn
+#define ENCODER_QOAD_A1_HSIOM ioss_0_port_0_pin_1_HSIOM
+#define ENCODER_QOAD_A1_IRQ ioss_interrupts_gpio_0_IRQn
 #if defined (CY_USING_HAL)
-	#define CYBSP_WCO_OUT_HAL_PORT_PIN P0_1
+	#define ENCODER_QOAD_A1_HAL_PORT_PIN P0_1
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_WCO_OUT P0_1
+	#define ENCODER_QOAD_A1 P0_1
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_WCO_OUT_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+	#define ENCODER_QOAD_A1_HAL_IRQ CYHAL_GPIO_IRQ_NONE
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_WCO_OUT_HAL_DIR CYHAL_GPIO_DIR_INPUT
+	#define ENCODER_QOAD_A1_HAL_DIR CYHAL_GPIO_DIR_INPUT 
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_WCO_OUT_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_ANALOG
+	#define ENCODER_QOAD_A1_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_NONE
+#endif //defined (CY_USING_HAL)
+#define ENCODER_QOAD_I1_ENABLED 1U
+#define ENCODER_QOAD_I1_PORT GPIO_PRT0
+#define ENCODER_QOAD_I1_PORT_NUM 0U
+#define ENCODER_QOAD_I1_PIN 2U
+#define ENCODER_QOAD_I1_NUM 2U
+#define ENCODER_QOAD_I1_DRIVEMODE CY_GPIO_DM_HIGHZ
+#define ENCODER_QOAD_I1_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_0_pin_2_HSIOM
+	#define ioss_0_port_0_pin_2_HSIOM HSIOM_SEL_GPIO
+#endif
+#define ENCODER_QOAD_I1_HSIOM ioss_0_port_0_pin_2_HSIOM
+#define ENCODER_QOAD_I1_IRQ ioss_interrupts_gpio_0_IRQn
+#if defined (CY_USING_HAL)
+	#define ENCODER_QOAD_I1_HAL_PORT_PIN P0_2
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_D0 (P0_2)
+	#define ENCODER_QOAD_I1 P0_2
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_D1 (P0_3)
+	#define ENCODER_QOAD_I1_HAL_IRQ CYHAL_GPIO_IRQ_NONE
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_SW3 (P0_4)
-	#define CYBSP_USER_BTN1 CYBSP_SW3
-	#define CYBSP_USER_BTN CYBSP_SW3
+	#define ENCODER_QOAD_I1_HAL_DIR CYHAL_GPIO_DIR_INPUT 
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_A0 (P10_0)
-	#define CYBSP_J2_1 CYBSP_A0
+	#define ENCODER_QOAD_I1_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_NONE
+#endif //defined (CY_USING_HAL)
+#define ENCODER_QOAD_I2_ENABLED 1U
+#define ENCODER_QOAD_I2_PORT GPIO_PRT0
+#define ENCODER_QOAD_I2_PORT_NUM 0U
+#define ENCODER_QOAD_I2_PIN 3U
+#define ENCODER_QOAD_I2_NUM 3U
+#define ENCODER_QOAD_I2_DRIVEMODE CY_GPIO_DM_HIGHZ
+#define ENCODER_QOAD_I2_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_0_pin_3_HSIOM
+	#define ioss_0_port_0_pin_3_HSIOM HSIOM_SEL_GPIO
+#endif
+#define ENCODER_QOAD_I2_HSIOM ioss_0_port_0_pin_3_HSIOM
+#define ENCODER_QOAD_I2_IRQ ioss_interrupts_gpio_0_IRQn
+#if defined (CY_USING_HAL)
+	#define ENCODER_QOAD_I2_HAL_PORT_PIN P0_3
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_A1 (P10_1)
-	#define CYBSP_J2_3 CYBSP_A1
+	#define ENCODER_QOAD_I2 P0_3
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_A2 (P10_2)
-	#define CYBSP_J2_5 CYBSP_A2
+	#define ENCODER_QOAD_I2_HAL_IRQ CYHAL_GPIO_IRQ_NONE
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_A3 (P10_3)
-	#define CYBSP_J2_7 CYBSP_A3
+	#define ENCODER_QOAD_I2_HAL_DIR CYHAL_GPIO_DIR_INPUT 
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_A4 (P10_4)
-	#define CYBSP_J2_9 CYBSP_A4
+	#define ENCODER_QOAD_I2_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_NONE
+#endif //defined (CY_USING_HAL)
+#define ENCODER_QOAD_B2_ENABLED 1U
+#define ENCODER_QOAD_B2_PORT GPIO_PRT0
+#define ENCODER_QOAD_B2_PORT_NUM 0U
+#define ENCODER_QOAD_B2_PIN 4U
+#define ENCODER_QOAD_B2_NUM 4U
+#define ENCODER_QOAD_B2_DRIVEMODE CY_GPIO_DM_STRONG_IN_OFF
+#define ENCODER_QOAD_B2_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_0_pin_4_HSIOM
+	#define ioss_0_port_0_pin_4_HSIOM HSIOM_SEL_GPIO
+#endif
+#define ENCODER_QOAD_B2_HSIOM ioss_0_port_0_pin_4_HSIOM
+#define ENCODER_QOAD_B2_IRQ ioss_interrupts_gpio_0_IRQn
+#if defined (CY_USING_HAL)
+	#define ENCODER_QOAD_B2_HAL_PORT_PIN P0_4
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_A5 (P10_5)
-	#define CYBSP_J2_11 CYBSP_A5
+	#define ENCODER_QOAD_B2 P0_4
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_A6 (P10_6)
-	#define CYBSP_J2_13 CYBSP_A6
+	#define ENCODER_QOAD_B2_HAL_IRQ CYHAL_GPIO_IRQ_NONE
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_A7 (P10_7)
-	#define CYBSP_J2_15 CYBSP_A7
+	#define ENCODER_QOAD_B2_HAL_DIR CYHAL_GPIO_DIR_OUTPUT 
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_QSPI_SS (P11_2)
+	#define ENCODER_QOAD_B2_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_STRONG
+#endif //defined (CY_USING_HAL)
+#define ENCODER_QOAD_A2_ENABLED 1U
+#define ENCODER_QOAD_A2_PORT GPIO_PRT0
+#define ENCODER_QOAD_A2_PORT_NUM 0U
+#define ENCODER_QOAD_A2_PIN 5U
+#define ENCODER_QOAD_A2_NUM 5U
+#define ENCODER_QOAD_A2_DRIVEMODE CY_GPIO_DM_HIGHZ
+#define ENCODER_QOAD_A2_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_0_pin_5_HSIOM
+	#define ioss_0_port_0_pin_5_HSIOM HSIOM_SEL_GPIO
+#endif
+#define ENCODER_QOAD_A2_HSIOM ioss_0_port_0_pin_5_HSIOM
+#define ENCODER_QOAD_A2_IRQ ioss_interrupts_gpio_0_IRQn
+#if defined (CY_USING_HAL)
+	#define ENCODER_QOAD_A2_HAL_PORT_PIN P0_5
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_QSPI_D3 (P11_3)
+	#define ENCODER_QOAD_A2 P0_5
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_QSPI_D2 (P11_4)
+	#define ENCODER_QOAD_A2_HAL_IRQ CYHAL_GPIO_IRQ_NONE
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_QSPI_D1 (P11_5)
+	#define ENCODER_QOAD_A2_HAL_DIR CYHAL_GPIO_DIR_INPUT 
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_QSPI_D0 (P11_6)
+	#define ENCODER_QOAD_A2_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_NONE
+#endif //defined (CY_USING_HAL)
+#define NC_0_ENABLED 1U
+#define NC_0_PORT GPIO_PRT10
+#define NC_0_PORT_NUM 10U
+#define NC_0_PIN 0U
+#define NC_0_NUM 0U
+#define NC_0_DRIVEMODE CY_GPIO_DM_HIGHZ
+#define NC_0_INIT_DRIVESTATE 0
+#ifndef ioss_0_port_10_pin_0_HSIOM
+	#define ioss_0_port_10_pin_0_HSIOM HSIOM_SEL_GPIO
+#endif
+#define NC_0_HSIOM ioss_0_port_10_pin_0_HSIOM
+#define NC_0_IRQ ioss_interrupts_gpio_10_IRQn
+#if defined (CY_USING_HAL)
+	#define NC_0_HAL_PORT_PIN P10_0
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_QSPI_SCK (P11_7)
+	#define NC_0 P10_0
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_SPI_MOSI (P2_0)
-	#define CYBSP_D11 CYBSP_SPI_MOSI
+	#define NC_0_HAL_IRQ CYHAL_GPIO_IRQ_NONE
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_SPI_MISO (P2_1)
-	#define CYBSP_D12 CYBSP_SPI_MISO
+	#define NC_0_HAL_DIR CYHAL_GPIO_DIR_INPUT 
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_SPI_CLK (P2_2)
-	#define CYBSP_D13 CYBSP_SPI_CLK
+	#define NC_0_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_NONE
+#endif //defined (CY_USING_HAL)
+#define ADC_ISENSE_C_ENABLED 1U
+#define ADC_ISENSE_C_PORT GPIO_PRT10
+#define ADC_ISENSE_C_PORT_NUM 10U
+#define ADC_ISENSE_C_PIN 1U
+#define ADC_ISENSE_C_NUM 1U
+#define ADC_ISENSE_C_DRIVEMODE CY_GPIO_DM_ANALOG
+#define ADC_ISENSE_C_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_10_pin_1_HSIOM
+	#define ioss_0_port_10_pin_1_HSIOM HSIOM_SEL_GPIO
+#endif
+#define ADC_ISENSE_C_HSIOM ioss_0_port_10_pin_1_HSIOM
+#define ADC_ISENSE_C_IRQ ioss_interrupts_gpio_10_IRQn
+#if defined (CY_USING_HAL)
+	#define ADC_ISENSE_C_HAL_PORT_PIN P10_1
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_SPI_CS (P2_3)
-	#define CYBSP_D10 CYBSP_SPI_CS
+	#define ADC_ISENSE_C P10_1
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_D8 (P2_4)
+	#define ADC_ISENSE_C_HAL_IRQ CYHAL_GPIO_IRQ_NONE
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_LED8 (P2_5)
-	#define CYBSP_USER_LED1 CYBSP_LED8
-	#define CYBSP_USER_LED CYBSP_LED8
+	#define ADC_ISENSE_C_HAL_DIR CYHAL_GPIO_DIR_INPUT 
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_D9 (P2_6)
+	#define ADC_ISENSE_C_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_ANALOG
+#endif //defined (CY_USING_HAL)
+#define ADC_ISENSE_B_ENABLED 1U
+#define ADC_ISENSE_B_PORT GPIO_PRT10
+#define ADC_ISENSE_B_PORT_NUM 10U
+#define ADC_ISENSE_B_PIN 2U
+#define ADC_ISENSE_B_NUM 2U
+#define ADC_ISENSE_B_DRIVEMODE CY_GPIO_DM_ANALOG
+#define ADC_ISENSE_B_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_10_pin_2_HSIOM
+	#define ioss_0_port_10_pin_2_HSIOM HSIOM_SEL_GPIO
+#endif
+#define ADC_ISENSE_B_HSIOM ioss_0_port_10_pin_2_HSIOM
+#define ADC_ISENSE_B_IRQ ioss_interrupts_gpio_10_IRQn
+#if defined (CY_USING_HAL)
+	#define ADC_ISENSE_B_HAL_PORT_PIN P10_2
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_LED9 (P2_7)
-	#define CYBSP_USER_LED2 CYBSP_LED9
+	#define ADC_ISENSE_B P10_2
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_DEBUG_UART_RX (P3_0)
-	#define CYBSP_A14 CYBSP_DEBUG_UART_RX
-	#define CYBSP_J2_14 CYBSP_DEBUG_UART_RX
+	#define ADC_ISENSE_B_HAL_IRQ CYHAL_GPIO_IRQ_NONE
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_DEBUG_UART_TX (P3_1)
-	#define CYBSP_A15 CYBSP_DEBUG_UART_TX
-	#define CYBSP_J2_16 CYBSP_DEBUG_UART_TX
+	#define ADC_ISENSE_B_HAL_DIR CYHAL_GPIO_DIR_INPUT 
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_D2 (P5_0)
+	#define ADC_ISENSE_B_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_ANALOG
+#endif //defined (CY_USING_HAL)
+#define ADC_ISENSE_A_ENABLED 1U
+#define ADC_ISENSE_A_PORT GPIO_PRT10
+#define ADC_ISENSE_A_PORT_NUM 10U
+#define ADC_ISENSE_A_PIN 3U
+#define ADC_ISENSE_A_NUM 3U
+#define ADC_ISENSE_A_DRIVEMODE CY_GPIO_DM_ANALOG
+#define ADC_ISENSE_A_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_10_pin_3_HSIOM
+	#define ioss_0_port_10_pin_3_HSIOM HSIOM_SEL_GPIO
+#endif
+#define ADC_ISENSE_A_HSIOM ioss_0_port_10_pin_3_HSIOM
+#define ADC_ISENSE_A_IRQ ioss_interrupts_gpio_10_IRQn
+#if defined (CY_USING_HAL)
+	#define ADC_ISENSE_A_HAL_PORT_PIN P10_3
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_D3 (P5_1)
+	#define ADC_ISENSE_A P10_3
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_D4 (P5_6)
+	#define ADC_ISENSE_A_HAL_IRQ CYHAL_GPIO_IRQ_NONE
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_D5 (P5_7)
+	#define ADC_ISENSE_A_HAL_DIR CYHAL_GPIO_DIR_INPUT 
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_D6 (P6_2)
+	#define ADC_ISENSE_A_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_ANALOG
+#endif //defined (CY_USING_HAL)
+#define ADC_VBUS_SENSE_ENABLED 1U
+#define ADC_VBUS_SENSE_PORT GPIO_PRT10
+#define ADC_VBUS_SENSE_PORT_NUM 10U
+#define ADC_VBUS_SENSE_PIN 4U
+#define ADC_VBUS_SENSE_NUM 4U
+#define ADC_VBUS_SENSE_DRIVEMODE CY_GPIO_DM_ANALOG
+#define ADC_VBUS_SENSE_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_10_pin_4_HSIOM
+	#define ioss_0_port_10_pin_4_HSIOM HSIOM_SEL_GPIO
+#endif
+#define ADC_VBUS_SENSE_HSIOM ioss_0_port_10_pin_4_HSIOM
+#define ADC_VBUS_SENSE_IRQ ioss_interrupts_gpio_10_IRQn
+#if defined (CY_USING_HAL)
+	#define ADC_VBUS_SENSE_HAL_PORT_PIN P10_4
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_D7 (P6_3)
+	#define ADC_VBUS_SENSE P10_4
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_SWO (P6_4)
-	#define CYBSP_I2C_SCL CYBSP_SWO
-	#define CYBSP_D15 CYBSP_SWO
+	#define ADC_VBUS_SENSE_HAL_IRQ CYHAL_GPIO_IRQ_NONE
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_I2C_SDA (P6_5)
-	#define CYBSP_D14 CYBSP_I2C_SDA
+	#define ADC_VBUS_SENSE_HAL_DIR CYHAL_GPIO_DIR_INPUT 
 #endif //defined (CY_USING_HAL)
-#define CYBSP_SWDIO_ENABLED 1U
-#define CYBSP_SWDIO_PORT GPIO_PRT6
-#define CYBSP_SWDIO_PORT_NUM 6U
-#define CYBSP_SWDIO_PIN 6U
-#define CYBSP_SWDIO_NUM 6U
-#define CYBSP_SWDIO_DRIVEMODE CY_GPIO_DM_PULLUP
-#define CYBSP_SWDIO_INIT_DRIVESTATE 1
+#if defined (CY_USING_HAL)
+	#define ADC_VBUS_SENSE_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_ANALOG
+#endif //defined (CY_USING_HAL)
+#define ADC_TEMP1_ENABLED 1U
+#define ADC_TEMP1_PORT GPIO_PRT10
+#define ADC_TEMP1_PORT_NUM 10U
+#define ADC_TEMP1_PIN 5U
+#define ADC_TEMP1_NUM 5U
+#define ADC_TEMP1_DRIVEMODE CY_GPIO_DM_ANALOG
+#define ADC_TEMP1_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_10_pin_5_HSIOM
+	#define ioss_0_port_10_pin_5_HSIOM HSIOM_SEL_GPIO
+#endif
+#define ADC_TEMP1_HSIOM ioss_0_port_10_pin_5_HSIOM
+#define ADC_TEMP1_IRQ ioss_interrupts_gpio_10_IRQn
+#if defined (CY_USING_HAL)
+	#define ADC_TEMP1_HAL_PORT_PIN P10_5
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ADC_TEMP1 P10_5
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ADC_TEMP1_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ADC_TEMP1_HAL_DIR CYHAL_GPIO_DIR_INPUT 
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ADC_TEMP1_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_ANALOG
+#endif //defined (CY_USING_HAL)
+#define GPIO1_ENABLED 1U
+#define GPIO1_PORT GPIO_PRT10
+#define GPIO1_PORT_NUM 10U
+#define GPIO1_PIN 6U
+#define GPIO1_NUM 6U
+#define GPIO1_DRIVEMODE CY_GPIO_DM_ANALOG
+#define GPIO1_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_10_pin_6_HSIOM
+	#define ioss_0_port_10_pin_6_HSIOM HSIOM_SEL_GPIO
+#endif
+#define GPIO1_HSIOM ioss_0_port_10_pin_6_HSIOM
+#define GPIO1_IRQ ioss_interrupts_gpio_10_IRQn
+#if defined (CY_USING_HAL)
+	#define GPIO1_HAL_PORT_PIN P10_6
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define GPIO1 P10_6
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define GPIO1_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define GPIO1_HAL_DIR CYHAL_GPIO_DIR_INPUT 
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define GPIO1_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_ANALOG
+#endif //defined (CY_USING_HAL)
+#define GPIO0_ENABLED 1U
+#define GPIO0_PORT GPIO_PRT10
+#define GPIO0_PORT_NUM 10U
+#define GPIO0_PIN 7U
+#define GPIO0_NUM 7U
+#define GPIO0_DRIVEMODE CY_GPIO_DM_ANALOG
+#define GPIO0_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_10_pin_7_HSIOM
+	#define ioss_0_port_10_pin_7_HSIOM HSIOM_SEL_GPIO
+#endif
+#define GPIO0_HSIOM ioss_0_port_10_pin_7_HSIOM
+#define GPIO0_IRQ ioss_interrupts_gpio_10_IRQn
+#if defined (CY_USING_HAL)
+	#define GPIO0_HAL_PORT_PIN P10_7
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define GPIO0 P10_7
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define GPIO0_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define GPIO0_HAL_DIR CYHAL_GPIO_DIR_INPUT 
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define GPIO0_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_ANALOG
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define NC_1 (P11_2)
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define NC_2 (P11_3)
+#endif //defined (CY_USING_HAL)
+#define PWM_AL_ENABLED 1U
+#define PWM_AL_PORT GPIO_PRT11
+#define PWM_AL_PORT_NUM 11U
+#define PWM_AL_PIN 4U
+#define PWM_AL_NUM 4U
+#define PWM_AL_DRIVEMODE CY_GPIO_DM_STRONG_IN_OFF
+#define PWM_AL_INIT_DRIVESTATE 0
+#ifndef ioss_0_port_11_pin_4_HSIOM
+	#define ioss_0_port_11_pin_4_HSIOM HSIOM_SEL_GPIO
+#endif
+#define PWM_AL_HSIOM ioss_0_port_11_pin_4_HSIOM
+#define PWM_AL_IRQ ioss_interrupts_gpio_11_IRQn
+#if defined (CY_USING_HAL)
+	#define PWM_AL_HAL_PORT_PIN P11_4
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define PWM_AL P11_4
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define PWM_AL_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define PWM_AL_HAL_DIR CYHAL_GPIO_DIR_OUTPUT 
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define PWM_AL_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_STRONG
+#endif //defined (CY_USING_HAL)
+#define PWM_AH_ENABLED 1U
+#define PWM_AH_PORT GPIO_PRT11
+#define PWM_AH_PORT_NUM 11U
+#define PWM_AH_PIN 5U
+#define PWM_AH_NUM 5U
+#define PWM_AH_DRIVEMODE CY_GPIO_DM_STRONG_IN_OFF
+#define PWM_AH_INIT_DRIVESTATE 0
+#ifndef ioss_0_port_11_pin_5_HSIOM
+	#define ioss_0_port_11_pin_5_HSIOM HSIOM_SEL_GPIO
+#endif
+#define PWM_AH_HSIOM ioss_0_port_11_pin_5_HSIOM
+#define PWM_AH_IRQ ioss_interrupts_gpio_11_IRQn
+#if defined (CY_USING_HAL)
+	#define PWM_AH_HAL_PORT_PIN P11_5
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define PWM_AH P11_5
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define PWM_AH_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define PWM_AH_HAL_DIR CYHAL_GPIO_DIR_OUTPUT 
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define PWM_AH_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_STRONG
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define NC_3 (P11_6)
+#endif //defined (CY_USING_HAL)
+#define NC_4_ENABLED 1U
+#define NC_4_PORT GPIO_PRT11
+#define NC_4_PORT_NUM 11U
+#define NC_4_PIN 7U
+#define NC_4_NUM 7U
+#define NC_4_DRIVEMODE CY_GPIO_DM_STRONG_IN_OFF
+#define NC_4_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_11_pin_7_HSIOM
+	#define ioss_0_port_11_pin_7_HSIOM HSIOM_SEL_GPIO
+#endif
+#define NC_4_HSIOM ioss_0_port_11_pin_7_HSIOM
+#define NC_4_IRQ ioss_interrupts_gpio_11_IRQn
+#if defined (CY_USING_HAL)
+	#define NC_4_HAL_PORT_PIN P11_7
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define NC_4 P11_7
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define NC_4_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define NC_4_HAL_DIR CYHAL_GPIO_DIR_OUTPUT 
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define NC_4_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_STRONG
+#endif //defined (CY_USING_HAL)
+#define ECO_IN_ENABLED 1U
+#define ECO_IN_PORT GPIO_PRT12
+#define ECO_IN_PORT_NUM 12U
+#define ECO_IN_PIN 6U
+#define ECO_IN_NUM 6U
+#define ECO_IN_DRIVEMODE CY_GPIO_DM_ANALOG
+#define ECO_IN_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_12_pin_6_HSIOM
+	#define ioss_0_port_12_pin_6_HSIOM HSIOM_SEL_GPIO
+#endif
+#define ECO_IN_HSIOM ioss_0_port_12_pin_6_HSIOM
+#define ECO_IN_IRQ ioss_interrupts_gpio_12_IRQn
+#if defined (CY_USING_HAL)
+	#define ECO_IN_HAL_PORT_PIN P12_6
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ECO_IN P12_6
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ECO_IN_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ECO_IN_HAL_DIR CYHAL_GPIO_DIR_INPUT 
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ECO_IN_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_ANALOG
+#endif //defined (CY_USING_HAL)
+#define ECO_OUT_ENABLED 1U
+#define ECO_OUT_PORT GPIO_PRT12
+#define ECO_OUT_PORT_NUM 12U
+#define ECO_OUT_PIN 7U
+#define ECO_OUT_NUM 7U
+#define ECO_OUT_DRIVEMODE CY_GPIO_DM_ANALOG
+#define ECO_OUT_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_12_pin_7_HSIOM
+	#define ioss_0_port_12_pin_7_HSIOM HSIOM_SEL_GPIO
+#endif
+#define ECO_OUT_HSIOM ioss_0_port_12_pin_7_HSIOM
+#define ECO_OUT_IRQ ioss_interrupts_gpio_12_IRQn
+#if defined (CY_USING_HAL)
+	#define ECO_OUT_HAL_PORT_PIN P12_7
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ECO_OUT P12_7
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ECO_OUT_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ECO_OUT_HAL_DIR CYHAL_GPIO_DIR_INPUT 
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ECO_OUT_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_ANALOG
+#endif //defined (CY_USING_HAL)
+#define ENC_SSC_DO_ENABLED 1U
+#define ENC_SSC_DO_PORT GPIO_PRT2
+#define ENC_SSC_DO_PORT_NUM 2U
+#define ENC_SSC_DO_PIN 0U
+#define ENC_SSC_DO_NUM 0U
+#define ENC_SSC_DO_DRIVEMODE CY_GPIO_DM_STRONG_IN_OFF
+#define ENC_SSC_DO_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_2_pin_0_HSIOM
+	#define ioss_0_port_2_pin_0_HSIOM HSIOM_SEL_GPIO
+#endif
+#define ENC_SSC_DO_HSIOM ioss_0_port_2_pin_0_HSIOM
+#define ENC_SSC_DO_IRQ ioss_interrupts_gpio_2_IRQn
+#if defined (CY_USING_HAL)
+	#define ENC_SSC_DO_HAL_PORT_PIN P2_0
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ENC_SSC_DO P2_0
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ENC_SSC_DO_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ENC_SSC_DO_HAL_DIR CYHAL_GPIO_DIR_OUTPUT 
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ENC_SSC_DO_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_STRONG
+#endif //defined (CY_USING_HAL)
+#define ENC_SSC_DI_ENABLED 1U
+#define ENC_SSC_DI_PORT GPIO_PRT2
+#define ENC_SSC_DI_PORT_NUM 2U
+#define ENC_SSC_DI_PIN 1U
+#define ENC_SSC_DI_NUM 1U
+#define ENC_SSC_DI_DRIVEMODE CY_GPIO_DM_HIGHZ
+#define ENC_SSC_DI_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_2_pin_1_HSIOM
+	#define ioss_0_port_2_pin_1_HSIOM HSIOM_SEL_GPIO
+#endif
+#define ENC_SSC_DI_HSIOM ioss_0_port_2_pin_1_HSIOM
+#define ENC_SSC_DI_IRQ ioss_interrupts_gpio_2_IRQn
+#if defined (CY_USING_HAL)
+	#define ENC_SSC_DI_HAL_PORT_PIN P2_1
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ENC_SSC_DI P2_1
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ENC_SSC_DI_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ENC_SSC_DI_HAL_DIR CYHAL_GPIO_DIR_INPUT 
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ENC_SSC_DI_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_NONE
+#endif //defined (CY_USING_HAL)
+#define ENC_SSC_SCK_ENABLED 1U
+#define ENC_SSC_SCK_PORT GPIO_PRT2
+#define ENC_SSC_SCK_PORT_NUM 2U
+#define ENC_SSC_SCK_PIN 2U
+#define ENC_SSC_SCK_NUM 2U
+#define ENC_SSC_SCK_DRIVEMODE CY_GPIO_DM_STRONG_IN_OFF
+#define ENC_SSC_SCK_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_2_pin_2_HSIOM
+	#define ioss_0_port_2_pin_2_HSIOM HSIOM_SEL_GPIO
+#endif
+#define ENC_SSC_SCK_HSIOM ioss_0_port_2_pin_2_HSIOM
+#define ENC_SSC_SCK_IRQ ioss_interrupts_gpio_2_IRQn
+#if defined (CY_USING_HAL)
+	#define ENC_SSC_SCK_HAL_PORT_PIN P2_2
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ENC_SSC_SCK P2_2
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ENC_SSC_SCK_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ENC_SSC_SCK_HAL_DIR CYHAL_GPIO_DIR_OUTPUT 
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ENC_SSC_SCK_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_STRONG
+#endif //defined (CY_USING_HAL)
+#define ENC_SSC_CS1_ENABLED 1U
+#define ENC_SSC_CS1_PORT GPIO_PRT2
+#define ENC_SSC_CS1_PORT_NUM 2U
+#define ENC_SSC_CS1_PIN 3U
+#define ENC_SSC_CS1_NUM 3U
+#define ENC_SSC_CS1_DRIVEMODE CY_GPIO_DM_STRONG_IN_OFF
+#define ENC_SSC_CS1_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_2_pin_3_HSIOM
+	#define ioss_0_port_2_pin_3_HSIOM HSIOM_SEL_GPIO
+#endif
+#define ENC_SSC_CS1_HSIOM ioss_0_port_2_pin_3_HSIOM
+#define ENC_SSC_CS1_IRQ ioss_interrupts_gpio_2_IRQn
+#if defined (CY_USING_HAL)
+	#define ENC_SSC_CS1_HAL_PORT_PIN P2_3
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ENC_SSC_CS1 P2_3
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ENC_SSC_CS1_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ENC_SSC_CS1_HAL_DIR CYHAL_GPIO_DIR_OUTPUT 
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ENC_SSC_CS1_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_STRONG
+#endif //defined (CY_USING_HAL)
+#define ENC_SSC_CS2_ENABLED 1U
+#define ENC_SSC_CS2_PORT GPIO_PRT2
+#define ENC_SSC_CS2_PORT_NUM 2U
+#define ENC_SSC_CS2_PIN 4U
+#define ENC_SSC_CS2_NUM 4U
+#define ENC_SSC_CS2_DRIVEMODE CY_GPIO_DM_STRONG_IN_OFF
+#define ENC_SSC_CS2_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_2_pin_4_HSIOM
+	#define ioss_0_port_2_pin_4_HSIOM HSIOM_SEL_GPIO
+#endif
+#define ENC_SSC_CS2_HSIOM ioss_0_port_2_pin_4_HSIOM
+#define ENC_SSC_CS2_IRQ ioss_interrupts_gpio_2_IRQn
+#if defined (CY_USING_HAL)
+	#define ENC_SSC_CS2_HAL_PORT_PIN P2_4
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ENC_SSC_CS2 P2_4
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ENC_SSC_CS2_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ENC_SSC_CS2_HAL_DIR CYHAL_GPIO_DIR_OUTPUT 
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define ENC_SSC_CS2_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_STRONG
+#endif //defined (CY_USING_HAL)
+#define CANF_SILENT_ENABLED 1U
+#define CANF_SILENT_PORT GPIO_PRT2
+#define CANF_SILENT_PORT_NUM 2U
+#define CANF_SILENT_PIN 5U
+#define CANF_SILENT_NUM 5U
+#define CANF_SILENT_DRIVEMODE CY_GPIO_DM_STRONG
+#define CANF_SILENT_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_2_pin_5_HSIOM
+	#define ioss_0_port_2_pin_5_HSIOM HSIOM_SEL_GPIO
+#endif
+#define CANF_SILENT_HSIOM ioss_0_port_2_pin_5_HSIOM
+#define CANF_SILENT_IRQ ioss_interrupts_gpio_2_IRQn
+#if defined (CY_USING_HAL)
+	#define CANF_SILENT_HAL_PORT_PIN P2_5
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define CANF_SILENT P2_5
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define CANF_SILENT_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define CANF_SILENT_HAL_DIR CYHAL_GPIO_DIR_BIDIRECTIONAL 
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define CANF_SILENT_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_STRONG
+#endif //defined (CY_USING_HAL)
+#define LED0_ENABLED 1U
+#define LED0_PORT GPIO_PRT2
+#define LED0_PORT_NUM 2U
+#define LED0_PIN 6U
+#define LED0_NUM 6U
+#define LED0_DRIVEMODE CY_GPIO_DM_STRONG
+#define LED0_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_2_pin_6_HSIOM
+	#define ioss_0_port_2_pin_6_HSIOM HSIOM_SEL_GPIO
+#endif
+#define LED0_HSIOM ioss_0_port_2_pin_6_HSIOM
+#define LED0_IRQ ioss_interrupts_gpio_2_IRQn
+#if defined (CY_USING_HAL)
+	#define LED0_HAL_PORT_PIN P2_6
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define LED0 P2_6
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define LED0_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define LED0_HAL_DIR CYHAL_GPIO_DIR_BIDIRECTIONAL 
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define LED0_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_STRONG
+#endif //defined (CY_USING_HAL)
+#define LED1_ENABLED 1U
+#define LED1_PORT GPIO_PRT2
+#define LED1_PORT_NUM 2U
+#define LED1_PIN 7U
+#define LED1_NUM 7U
+#define LED1_DRIVEMODE CY_GPIO_DM_STRONG
+#define LED1_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_2_pin_7_HSIOM
+	#define ioss_0_port_2_pin_7_HSIOM HSIOM_SEL_GPIO
+#endif
+#define LED1_HSIOM ioss_0_port_2_pin_7_HSIOM
+#define LED1_IRQ ioss_interrupts_gpio_2_IRQn
+#if defined (CY_USING_HAL)
+	#define LED1_HAL_PORT_PIN P2_7
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define LED1 P2_7
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define LED1_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define LED1_HAL_DIR CYHAL_GPIO_DIR_BIDIRECTIONAL 
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define LED1_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_STRONG
+#endif //defined (CY_USING_HAL)
+#define DEBUG_UART_RX_ENABLED 1U
+#define DEBUG_UART_RX_PORT GPIO_PRT3
+#define DEBUG_UART_RX_PORT_NUM 3U
+#define DEBUG_UART_RX_PIN 0U
+#define DEBUG_UART_RX_NUM 0U
+#define DEBUG_UART_RX_DRIVEMODE CY_GPIO_DM_HIGHZ
+#define DEBUG_UART_RX_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_3_pin_0_HSIOM
+	#define ioss_0_port_3_pin_0_HSIOM HSIOM_SEL_GPIO
+#endif
+#define DEBUG_UART_RX_HSIOM ioss_0_port_3_pin_0_HSIOM
+#define DEBUG_UART_RX_IRQ ioss_interrupts_gpio_3_IRQn
+#if defined (CY_USING_HAL)
+	#define DEBUG_UART_RX_HAL_PORT_PIN P3_0
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define DEBUG_UART_RX P3_0
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define DEBUG_UART_RX_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define DEBUG_UART_RX_HAL_DIR CYHAL_GPIO_DIR_INPUT 
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define DEBUG_UART_RX_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_NONE
+#endif //defined (CY_USING_HAL)
+#define DEBUG_UART_TX_ENABLED 1U
+#define DEBUG_UART_TX_PORT GPIO_PRT3
+#define DEBUG_UART_TX_PORT_NUM 3U
+#define DEBUG_UART_TX_PIN 1U
+#define DEBUG_UART_TX_NUM 1U
+#define DEBUG_UART_TX_DRIVEMODE CY_GPIO_DM_STRONG_IN_OFF
+#define DEBUG_UART_TX_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_3_pin_1_HSIOM
+	#define ioss_0_port_3_pin_1_HSIOM HSIOM_SEL_GPIO
+#endif
+#define DEBUG_UART_TX_HSIOM ioss_0_port_3_pin_1_HSIOM
+#define DEBUG_UART_TX_IRQ ioss_interrupts_gpio_3_IRQn
+#if defined (CY_USING_HAL)
+	#define DEBUG_UART_TX_HAL_PORT_PIN P3_1
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define DEBUG_UART_TX P3_1
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define DEBUG_UART_TX_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define DEBUG_UART_TX_HAL_DIR CYHAL_GPIO_DIR_OUTPUT 
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define DEBUG_UART_TX_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_STRONG
+#endif //defined (CY_USING_HAL)
+#define CANFD_RX_ENABLED 1U
+#define CANFD_RX_PORT GPIO_PRT5
+#define CANFD_RX_PORT_NUM 5U
+#define CANFD_RX_PIN 0U
+#define CANFD_RX_NUM 0U
+#define CANFD_RX_DRIVEMODE CY_GPIO_DM_PULLUP
+#define CANFD_RX_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_5_pin_0_HSIOM
+	#define ioss_0_port_5_pin_0_HSIOM HSIOM_SEL_GPIO
+#endif
+#define CANFD_RX_HSIOM ioss_0_port_5_pin_0_HSIOM
+#define CANFD_RX_IRQ ioss_interrupts_gpio_5_IRQn
+#if defined (CY_USING_HAL)
+	#define CANFD_RX_HAL_PORT_PIN P5_0
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define CANFD_RX P5_0
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define CANFD_RX_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define CANFD_RX_HAL_DIR CYHAL_GPIO_DIR_BIDIRECTIONAL 
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define CANFD_RX_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_PULLUP
+#endif //defined (CY_USING_HAL)
+#define CANFD_TX_ENABLED 1U
+#define CANFD_TX_PORT GPIO_PRT5
+#define CANFD_TX_PORT_NUM 5U
+#define CANFD_TX_PIN 1U
+#define CANFD_TX_NUM 1U
+#define CANFD_TX_DRIVEMODE CY_GPIO_DM_STRONG
+#define CANFD_TX_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_5_pin_1_HSIOM
+	#define ioss_0_port_5_pin_1_HSIOM HSIOM_SEL_GPIO
+#endif
+#define CANFD_TX_HSIOM ioss_0_port_5_pin_1_HSIOM
+#define CANFD_TX_IRQ ioss_interrupts_gpio_5_IRQn
+#if defined (CY_USING_HAL)
+	#define CANFD_TX_HAL_PORT_PIN P5_1
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define CANFD_TX P5_1
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define CANFD_TX_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define CANFD_TX_HAL_DIR CYHAL_GPIO_DIR_BIDIRECTIONAL 
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define CANFD_TX_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_STRONG
+#endif //defined (CY_USING_HAL)
+#define GPIO2_ENABLED 1U
+#define GPIO2_PORT GPIO_PRT5
+#define GPIO2_PORT_NUM 5U
+#define GPIO2_PIN 6U
+#define GPIO2_NUM 6U
+#define GPIO2_DRIVEMODE CY_GPIO_DM_HIGHZ
+#define GPIO2_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_5_pin_6_HSIOM
+	#define ioss_0_port_5_pin_6_HSIOM HSIOM_SEL_GPIO
+#endif
+#define GPIO2_HSIOM ioss_0_port_5_pin_6_HSIOM
+#define GPIO2_IRQ ioss_interrupts_gpio_5_IRQn
+#if defined (CY_USING_HAL)
+	#define GPIO2_HAL_PORT_PIN P5_6
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define GPIO2 P5_6
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define GPIO2_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define GPIO2_HAL_DIR CYHAL_GPIO_DIR_INPUT 
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define GPIO2_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_NONE
+#endif //defined (CY_USING_HAL)
+#define GPIO3_ENABLED 1U
+#define GPIO3_PORT GPIO_PRT5
+#define GPIO3_PORT_NUM 5U
+#define GPIO3_PIN 7U
+#define GPIO3_NUM 7U
+#define GPIO3_DRIVEMODE CY_GPIO_DM_HIGHZ
+#define GPIO3_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_5_pin_7_HSIOM
+	#define ioss_0_port_5_pin_7_HSIOM HSIOM_SEL_GPIO
+#endif
+#define GPIO3_HSIOM ioss_0_port_5_pin_7_HSIOM
+#define GPIO3_IRQ ioss_interrupts_gpio_5_IRQn
+#if defined (CY_USING_HAL)
+	#define GPIO3_HAL_PORT_PIN P5_7
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define GPIO3 P5_7
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define GPIO3_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define GPIO3_HAL_DIR CYHAL_GPIO_DIR_INPUT 
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define GPIO3_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_NONE
+#endif //defined (CY_USING_HAL)
+#define FETDRV_PWM_CL_ENABLED 1U
+#define FETDRV_PWM_CL_PORT GPIO_PRT6
+#define FETDRV_PWM_CL_PORT_NUM 6U
+#define FETDRV_PWM_CL_PIN 2U
+#define FETDRV_PWM_CL_NUM 2U
+#define FETDRV_PWM_CL_DRIVEMODE CY_GPIO_DM_STRONG_IN_OFF
+#define FETDRV_PWM_CL_INIT_DRIVESTATE 0
+#ifndef ioss_0_port_6_pin_2_HSIOM
+	#define ioss_0_port_6_pin_2_HSIOM HSIOM_SEL_GPIO
+#endif
+#define FETDRV_PWM_CL_HSIOM ioss_0_port_6_pin_2_HSIOM
+#define FETDRV_PWM_CL_IRQ ioss_interrupts_gpio_6_IRQn
+#if defined (CY_USING_HAL)
+	#define FETDRV_PWM_CL_HAL_PORT_PIN P6_2
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define FETDRV_PWM_CL P6_2
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define FETDRV_PWM_CL_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define FETDRV_PWM_CL_HAL_DIR CYHAL_GPIO_DIR_OUTPUT 
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define FETDRV_PWM_CL_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_STRONG
+#endif //defined (CY_USING_HAL)
+#define FETDRV_PWM_CH_ENABLED 1U
+#define FETDRV_PWM_CH_PORT GPIO_PRT6
+#define FETDRV_PWM_CH_PORT_NUM 6U
+#define FETDRV_PWM_CH_PIN 3U
+#define FETDRV_PWM_CH_NUM 3U
+#define FETDRV_PWM_CH_DRIVEMODE CY_GPIO_DM_STRONG_IN_OFF
+#define FETDRV_PWM_CH_INIT_DRIVESTATE 0
+#ifndef ioss_0_port_6_pin_3_HSIOM
+	#define ioss_0_port_6_pin_3_HSIOM HSIOM_SEL_GPIO
+#endif
+#define FETDRV_PWM_CH_HSIOM ioss_0_port_6_pin_3_HSIOM
+#define FETDRV_PWM_CH_IRQ ioss_interrupts_gpio_6_IRQn
+#if defined (CY_USING_HAL)
+	#define FETDRV_PWM_CH_HAL_PORT_PIN P6_3
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define FETDRV_PWM_CH P6_3
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define FETDRV_PWM_CH_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define FETDRV_PWM_CH_HAL_DIR CYHAL_GPIO_DIR_OUTPUT 
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define FETDRV_PWM_CH_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_STRONG
+#endif //defined (CY_USING_HAL)
+#define SWO_ENABLED 1U
+#define DEBUG_I2C_SCL_ENABLED SWO_ENABLED
+#define SWO_PORT GPIO_PRT6
+#define DEBUG_I2C_SCL_PORT SWO_PORT
+#define SWO_PORT_NUM 6U
+#define DEBUG_I2C_SCL_PORT_NUM SWO_PORT_NUM
+#define SWO_PIN 4U
+#define DEBUG_I2C_SCL_PIN SWO_PIN
+#define SWO_NUM 4U
+#define DEBUG_I2C_SCL_NUM SWO_NUM
+#define SWO_DRIVEMODE CY_GPIO_DM_STRONG_IN_OFF
+#define DEBUG_I2C_SCL_DRIVEMODE SWO_DRIVEMODE
+#define SWO_INIT_DRIVESTATE 1
+#define DEBUG_I2C_SCL_INIT_DRIVESTATE SWO_INIT_DRIVESTATE
+#ifndef ioss_0_port_6_pin_4_HSIOM
+	#define ioss_0_port_6_pin_4_HSIOM HSIOM_SEL_GPIO
+#endif
+#define SWO_HSIOM ioss_0_port_6_pin_4_HSIOM
+#define DEBUG_I2C_SCL_HSIOM SWO_HSIOM
+#define SWO_IRQ ioss_interrupts_gpio_6_IRQn
+#define DEBUG_I2C_SCL_IRQ SWO_IRQ
+#if defined (CY_USING_HAL)
+	#define SWO_HAL_PORT_PIN P6_4
+	#define DEBUG_I2C_SCL_HAL_PORT_PIN SWO_HAL_PORT_PIN
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define SWO P6_4
+	#define DEBUG_I2C_SCL SWO
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define SWO_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+	#define DEBUG_I2C_SCL_HAL_IRQ SWO_HAL_IRQ
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define SWO_HAL_DIR CYHAL_GPIO_DIR_OUTPUT 
+	#define DEBUG_I2C_SCL_HAL_DIR SWO_HAL_DIR
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define SWO_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_STRONG
+	#define DEBUG_I2C_SCL_HAL_DRIVEMODE SWO_HAL_DRIVEMODE
+#endif //defined (CY_USING_HAL)
+#define TDI_ENABLED 1U
+#define DEBUG_I2C_SDA_ENABLED TDI_ENABLED
+#define TDI_PORT GPIO_PRT6
+#define DEBUG_I2C_SDA_PORT TDI_PORT
+#define TDI_PORT_NUM 6U
+#define DEBUG_I2C_SDA_PORT_NUM TDI_PORT_NUM
+#define TDI_PIN 5U
+#define DEBUG_I2C_SDA_PIN TDI_PIN
+#define TDI_NUM 5U
+#define DEBUG_I2C_SDA_NUM TDI_NUM
+#define TDI_DRIVEMODE CY_GPIO_DM_OD_DRIVESLOW
+#define DEBUG_I2C_SDA_DRIVEMODE TDI_DRIVEMODE
+#define TDI_INIT_DRIVESTATE 1
+#define DEBUG_I2C_SDA_INIT_DRIVESTATE TDI_INIT_DRIVESTATE
+#ifndef ioss_0_port_6_pin_5_HSIOM
+	#define ioss_0_port_6_pin_5_HSIOM HSIOM_SEL_GPIO
+#endif
+#define TDI_HSIOM ioss_0_port_6_pin_5_HSIOM
+#define DEBUG_I2C_SDA_HSIOM TDI_HSIOM
+#define TDI_IRQ ioss_interrupts_gpio_6_IRQn
+#define DEBUG_I2C_SDA_IRQ TDI_IRQ
+#if defined (CY_USING_HAL)
+	#define TDI_HAL_PORT_PIN P6_5
+	#define DEBUG_I2C_SDA_HAL_PORT_PIN TDI_HAL_PORT_PIN
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define TDI P6_5
+	#define DEBUG_I2C_SDA TDI
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define TDI_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+	#define DEBUG_I2C_SDA_HAL_IRQ TDI_HAL_IRQ
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define TDI_HAL_DIR CYHAL_GPIO_DIR_BIDIRECTIONAL 
+	#define DEBUG_I2C_SDA_HAL_DIR TDI_HAL_DIR
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define TDI_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_OPENDRAINDRIVESLOW
+	#define DEBUG_I2C_SDA_HAL_DRIVEMODE TDI_HAL_DRIVEMODE
+#endif //defined (CY_USING_HAL)
+#define SWDIO_ENABLED 1U
+#define SWDIO_PORT GPIO_PRT6
+#define SWDIO_PORT_NUM 6U
+#define SWDIO_PIN 6U
+#define SWDIO_NUM 6U
+#define SWDIO_DRIVEMODE CY_GPIO_DM_PULLUP
+#define SWDIO_INIT_DRIVESTATE 1
 #ifndef ioss_0_port_6_pin_6_HSIOM
 	#define ioss_0_port_6_pin_6_HSIOM HSIOM_SEL_GPIO
 #endif
-#define CYBSP_SWDIO_HSIOM ioss_0_port_6_pin_6_HSIOM
-#define CYBSP_SWDIO_IRQ ioss_interrupts_gpio_6_IRQn
+#define SWDIO_HSIOM ioss_0_port_6_pin_6_HSIOM
+#define SWDIO_IRQ ioss_interrupts_gpio_6_IRQn
 #if defined (CY_USING_HAL)
-	#define CYBSP_SWDIO_HAL_PORT_PIN P6_6
+	#define SWDIO_HAL_PORT_PIN P6_6
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_SWDIO P6_6
+	#define SWDIO P6_6
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_SWDIO_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+	#define SWDIO_HAL_IRQ CYHAL_GPIO_IRQ_NONE
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_SWDIO_HAL_DIR CYHAL_GPIO_DIR_BIDIRECTIONAL
+	#define SWDIO_HAL_DIR CYHAL_GPIO_DIR_BIDIRECTIONAL 
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_SWDIO_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_PULLUP
+	#define SWDIO_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_PULLUP
 #endif //defined (CY_USING_HAL)
-#define CYBSP_SWDCK_ENABLED 1U
-#define CYBSP_SWDCK_PORT GPIO_PRT6
-#define CYBSP_SWDCK_PORT_NUM 6U
-#define CYBSP_SWDCK_PIN 7U
-#define CYBSP_SWDCK_NUM 7U
-#define CYBSP_SWDCK_DRIVEMODE CY_GPIO_DM_PULLDOWN
-#define CYBSP_SWDCK_INIT_DRIVESTATE 1
+#define SWDCLK_ENABLED 1U
+#define SWDCLK_PORT GPIO_PRT6
+#define SWDCLK_PORT_NUM 6U
+#define SWDCLK_PIN 7U
+#define SWDCLK_NUM 7U
+#define SWDCLK_DRIVEMODE CY_GPIO_DM_PULLDOWN
+#define SWDCLK_INIT_DRIVESTATE 1
 #ifndef ioss_0_port_6_pin_7_HSIOM
 	#define ioss_0_port_6_pin_7_HSIOM HSIOM_SEL_GPIO
 #endif
-#define CYBSP_SWDCK_HSIOM ioss_0_port_6_pin_7_HSIOM
-#define CYBSP_SWDCK_IRQ ioss_interrupts_gpio_6_IRQn
+#define SWDCLK_HSIOM ioss_0_port_6_pin_7_HSIOM
+#define SWDCLK_IRQ ioss_interrupts_gpio_6_IRQn
 #if defined (CY_USING_HAL)
-	#define CYBSP_SWDCK_HAL_PORT_PIN P6_7
+	#define SWDCLK_HAL_PORT_PIN P6_7
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_SWDCK P6_7
+	#define SWDCLK P6_7
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_SWDCK_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+	#define SWDCLK_HAL_IRQ CYHAL_GPIO_IRQ_NONE
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_SWDCK_HAL_DIR CYHAL_GPIO_DIR_BIDIRECTIONAL
+	#define SWDCLK_HAL_DIR CYHAL_GPIO_DIR_BIDIRECTIONAL 
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_SWDCK_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_PULLDOWN
+	#define SWDCLK_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_PULLDOWN
 #endif //defined (CY_USING_HAL)
-#define CYBSP_CSD_BTN0_ENABLED 1U
-#define CYBSP_CS_BTN0_ENABLED CYBSP_CSD_BTN0_ENABLED
-#define CYBSP_CSD_BTN0_PORT GPIO_PRT7
-#define CYBSP_CS_BTN0_PORT CYBSP_CSD_BTN0_PORT
-#define CYBSP_CSD_BTN0_PORT_NUM 7U
-#define CYBSP_CS_BTN0_PORT_NUM CYBSP_CSD_BTN0_PORT_NUM
-#define CYBSP_CSD_BTN0_PIN 0U
-#define CYBSP_CS_BTN0_PIN CYBSP_CSD_BTN0_PIN
-#define CYBSP_CSD_BTN0_NUM 0U
-#define CYBSP_CS_BTN0_NUM CYBSP_CSD_BTN0_NUM
-#define CYBSP_CSD_BTN0_DRIVEMODE CY_GPIO_DM_ANALOG
-#define CYBSP_CS_BTN0_DRIVEMODE CYBSP_CSD_BTN0_DRIVEMODE
-#define CYBSP_CSD_BTN0_INIT_DRIVESTATE 1
-#define CYBSP_CS_BTN0_INIT_DRIVESTATE CYBSP_CSD_BTN0_INIT_DRIVESTATE
+#define FETDRV_MOSI_ENABLED 1U
+#define FETDRV_MOSI_PORT GPIO_PRT7
+#define FETDRV_MOSI_PORT_NUM 7U
+#define FETDRV_MOSI_PIN 0U
+#define FETDRV_MOSI_NUM 0U
+#define FETDRV_MOSI_DRIVEMODE CY_GPIO_DM_STRONG_IN_OFF
+#define FETDRV_MOSI_INIT_DRIVESTATE 1
 #ifndef ioss_0_port_7_pin_0_HSIOM
 	#define ioss_0_port_7_pin_0_HSIOM HSIOM_SEL_GPIO
 #endif
-#define CYBSP_CSD_BTN0_HSIOM ioss_0_port_7_pin_0_HSIOM
-#define CYBSP_CS_BTN0_HSIOM CYBSP_CSD_BTN0_HSIOM
-#define CYBSP_CSD_BTN0_IRQ ioss_interrupts_gpio_7_IRQn
-#define CYBSP_CS_BTN0_IRQ CYBSP_CSD_BTN0_IRQ
+#define FETDRV_MOSI_HSIOM ioss_0_port_7_pin_0_HSIOM
+#define FETDRV_MOSI_IRQ ioss_interrupts_gpio_7_IRQn
 #if defined (CY_USING_HAL)
-	#define CYBSP_CSD_BTN0_HAL_PORT_PIN P7_0
-	#define CYBSP_CS_BTN0_HAL_PORT_PIN CYBSP_CSD_BTN0_HAL_PORT_PIN
+	#define FETDRV_MOSI_HAL_PORT_PIN P7_0
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_CSD_BTN0 P7_0
-	#define CYBSP_CS_BTN0 CYBSP_CSD_BTN0
+	#define FETDRV_MOSI P7_0
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_CSD_BTN0_HAL_IRQ CYHAL_GPIO_IRQ_NONE
-	#define CYBSP_CS_BTN0_HAL_IRQ CYBSP_CSD_BTN0_HAL_IRQ
+	#define FETDRV_MOSI_HAL_IRQ CYHAL_GPIO_IRQ_NONE
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_CSD_BTN0_HAL_DIR CYHAL_GPIO_DIR_INPUT
-	#define CYBSP_CS_BTN0_HAL_DIR CYBSP_CSD_BTN0_HAL_DIR
+	#define FETDRV_MOSI_HAL_DIR CYHAL_GPIO_DIR_OUTPUT 
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_CSD_BTN0_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_ANALOG
-	#define CYBSP_CS_BTN0_HAL_DRIVEMODE CYBSP_CSD_BTN0_HAL_DRIVEMODE
+	#define FETDRV_MOSI_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_STRONG
 #endif //defined (CY_USING_HAL)
-#define CYBSP_CSD_BTN1_ENABLED 1U
-#define CYBSP_CS_BTN1_ENABLED CYBSP_CSD_BTN1_ENABLED
-#define CYBSP_CSD_BTN1_PORT GPIO_PRT7
-#define CYBSP_CS_BTN1_PORT CYBSP_CSD_BTN1_PORT
-#define CYBSP_CSD_BTN1_PORT_NUM 7U
-#define CYBSP_CS_BTN1_PORT_NUM CYBSP_CSD_BTN1_PORT_NUM
-#define CYBSP_CSD_BTN1_PIN 1U
-#define CYBSP_CS_BTN1_PIN CYBSP_CSD_BTN1_PIN
-#define CYBSP_CSD_BTN1_NUM 1U
-#define CYBSP_CS_BTN1_NUM CYBSP_CSD_BTN1_NUM
-#define CYBSP_CSD_BTN1_DRIVEMODE CY_GPIO_DM_ANALOG
-#define CYBSP_CS_BTN1_DRIVEMODE CYBSP_CSD_BTN1_DRIVEMODE
-#define CYBSP_CSD_BTN1_INIT_DRIVESTATE 1
-#define CYBSP_CS_BTN1_INIT_DRIVESTATE CYBSP_CSD_BTN1_INIT_DRIVESTATE
+#define FETDRV_MISO_ENABLED 1U
+#define FETDRV_MISO_PORT GPIO_PRT7
+#define FETDRV_MISO_PORT_NUM 7U
+#define FETDRV_MISO_PIN 1U
+#define FETDRV_MISO_NUM 1U
+#define FETDRV_MISO_DRIVEMODE CY_GPIO_DM_HIGHZ
+#define FETDRV_MISO_INIT_DRIVESTATE 1
 #ifndef ioss_0_port_7_pin_1_HSIOM
 	#define ioss_0_port_7_pin_1_HSIOM HSIOM_SEL_GPIO
 #endif
-#define CYBSP_CSD_BTN1_HSIOM ioss_0_port_7_pin_1_HSIOM
-#define CYBSP_CS_BTN1_HSIOM CYBSP_CSD_BTN1_HSIOM
-#define CYBSP_CSD_BTN1_IRQ ioss_interrupts_gpio_7_IRQn
-#define CYBSP_CS_BTN1_IRQ CYBSP_CSD_BTN1_IRQ
+#define FETDRV_MISO_HSIOM ioss_0_port_7_pin_1_HSIOM
+#define FETDRV_MISO_IRQ ioss_interrupts_gpio_7_IRQn
 #if defined (CY_USING_HAL)
-	#define CYBSP_CSD_BTN1_HAL_PORT_PIN P7_1
-	#define CYBSP_CS_BTN1_HAL_PORT_PIN CYBSP_CSD_BTN1_HAL_PORT_PIN
+	#define FETDRV_MISO_HAL_PORT_PIN P7_1
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_CSD_BTN1 P7_1
-	#define CYBSP_CS_BTN1 CYBSP_CSD_BTN1
+	#define FETDRV_MISO P7_1
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_CSD_BTN1_HAL_IRQ CYHAL_GPIO_IRQ_NONE
-	#define CYBSP_CS_BTN1_HAL_IRQ CYBSP_CSD_BTN1_HAL_IRQ
+	#define FETDRV_MISO_HAL_IRQ CYHAL_GPIO_IRQ_NONE
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_CSD_BTN1_HAL_DIR CYHAL_GPIO_DIR_INPUT
-	#define CYBSP_CS_BTN1_HAL_DIR CYBSP_CSD_BTN1_HAL_DIR
+	#define FETDRV_MISO_HAL_DIR CYHAL_GPIO_DIR_INPUT 
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_CSD_BTN1_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_ANALOG
-	#define CYBSP_CS_BTN1_HAL_DRIVEMODE CYBSP_CSD_BTN1_HAL_DRIVEMODE
+	#define FETDRV_MISO_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_NONE
 #endif //defined (CY_USING_HAL)
-#define CYBSP_CSD_SLD4_ENABLED 1U
-#define CYBSP_CS_SLD4_ENABLED CYBSP_CSD_SLD4_ENABLED
-#define CYBSP_CSD_SLD4_PORT GPIO_PRT7
-#define CYBSP_CS_SLD4_PORT CYBSP_CSD_SLD4_PORT
-#define CYBSP_CSD_SLD4_PORT_NUM 7U
-#define CYBSP_CS_SLD4_PORT_NUM CYBSP_CSD_SLD4_PORT_NUM
-#define CYBSP_CSD_SLD4_PIN 2U
-#define CYBSP_CS_SLD4_PIN CYBSP_CSD_SLD4_PIN
-#define CYBSP_CSD_SLD4_NUM 2U
-#define CYBSP_CS_SLD4_NUM CYBSP_CSD_SLD4_NUM
-#define CYBSP_CSD_SLD4_DRIVEMODE CY_GPIO_DM_ANALOG
-#define CYBSP_CS_SLD4_DRIVEMODE CYBSP_CSD_SLD4_DRIVEMODE
-#define CYBSP_CSD_SLD4_INIT_DRIVESTATE 1
-#define CYBSP_CS_SLD4_INIT_DRIVESTATE CYBSP_CSD_SLD4_INIT_DRIVESTATE
+#define FETDRV_SCK_ENABLED 1U
+#define FETDRV_SCK_PORT GPIO_PRT7
+#define FETDRV_SCK_PORT_NUM 7U
+#define FETDRV_SCK_PIN 2U
+#define FETDRV_SCK_NUM 2U
+#define FETDRV_SCK_DRIVEMODE CY_GPIO_DM_STRONG_IN_OFF
+#define FETDRV_SCK_INIT_DRIVESTATE 1
 #ifndef ioss_0_port_7_pin_2_HSIOM
 	#define ioss_0_port_7_pin_2_HSIOM HSIOM_SEL_GPIO
 #endif
-#define CYBSP_CSD_SLD4_HSIOM ioss_0_port_7_pin_2_HSIOM
-#define CYBSP_CS_SLD4_HSIOM CYBSP_CSD_SLD4_HSIOM
-#define CYBSP_CSD_SLD4_IRQ ioss_interrupts_gpio_7_IRQn
-#define CYBSP_CS_SLD4_IRQ CYBSP_CSD_SLD4_IRQ
+#define FETDRV_SCK_HSIOM ioss_0_port_7_pin_2_HSIOM
+#define FETDRV_SCK_IRQ ioss_interrupts_gpio_7_IRQn
 #if defined (CY_USING_HAL)
-	#define CYBSP_CSD_SLD4_HAL_PORT_PIN P7_2
-	#define CYBSP_CS_SLD4_HAL_PORT_PIN CYBSP_CSD_SLD4_HAL_PORT_PIN
+	#define FETDRV_SCK_HAL_PORT_PIN P7_2
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_CSD_SLD4 P7_2
-	#define CYBSP_CS_SLD4 CYBSP_CSD_SLD4
+	#define FETDRV_SCK P7_2
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_CSD_SLD4_HAL_IRQ CYHAL_GPIO_IRQ_NONE
-	#define CYBSP_CS_SLD4_HAL_IRQ CYBSP_CSD_SLD4_HAL_IRQ
+	#define FETDRV_SCK_HAL_IRQ CYHAL_GPIO_IRQ_NONE
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_CSD_SLD4_HAL_DIR CYHAL_GPIO_DIR_INPUT
-	#define CYBSP_CS_SLD4_HAL_DIR CYBSP_CSD_SLD4_HAL_DIR
+	#define FETDRV_SCK_HAL_DIR CYHAL_GPIO_DIR_OUTPUT 
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_CSD_SLD4_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_ANALOG
-	#define CYBSP_CS_SLD4_HAL_DRIVEMODE CYBSP_CSD_SLD4_HAL_DRIVEMODE
+	#define FETDRV_SCK_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_STRONG
 #endif //defined (CY_USING_HAL)
-#define CYBSP_CSD_SLD3_ENABLED 1U
-#define CYBSP_CS_SLD3_ENABLED CYBSP_CSD_SLD3_ENABLED
-#define CYBSP_CSD_SLD3_PORT GPIO_PRT7
-#define CYBSP_CS_SLD3_PORT CYBSP_CSD_SLD3_PORT
-#define CYBSP_CSD_SLD3_PORT_NUM 7U
-#define CYBSP_CS_SLD3_PORT_NUM CYBSP_CSD_SLD3_PORT_NUM
-#define CYBSP_CSD_SLD3_PIN 3U
-#define CYBSP_CS_SLD3_PIN CYBSP_CSD_SLD3_PIN
-#define CYBSP_CSD_SLD3_NUM 3U
-#define CYBSP_CS_SLD3_NUM CYBSP_CSD_SLD3_NUM
-#define CYBSP_CSD_SLD3_DRIVEMODE CY_GPIO_DM_ANALOG
-#define CYBSP_CS_SLD3_DRIVEMODE CYBSP_CSD_SLD3_DRIVEMODE
-#define CYBSP_CSD_SLD3_INIT_DRIVESTATE 1
-#define CYBSP_CS_SLD3_INIT_DRIVESTATE CYBSP_CSD_SLD3_INIT_DRIVESTATE
+#define FETDRV_CS_ENABLED 1U
+#define FETDRV_CS_PORT GPIO_PRT7
+#define FETDRV_CS_PORT_NUM 7U
+#define FETDRV_CS_PIN 3U
+#define FETDRV_CS_NUM 3U
+#define FETDRV_CS_DRIVEMODE CY_GPIO_DM_STRONG_IN_OFF
+#define FETDRV_CS_INIT_DRIVESTATE 1
 #ifndef ioss_0_port_7_pin_3_HSIOM
 	#define ioss_0_port_7_pin_3_HSIOM HSIOM_SEL_GPIO
 #endif
-#define CYBSP_CSD_SLD3_HSIOM ioss_0_port_7_pin_3_HSIOM
-#define CYBSP_CS_SLD3_HSIOM CYBSP_CSD_SLD3_HSIOM
-#define CYBSP_CSD_SLD3_IRQ ioss_interrupts_gpio_7_IRQn
-#define CYBSP_CS_SLD3_IRQ CYBSP_CSD_SLD3_IRQ
+#define FETDRV_CS_HSIOM ioss_0_port_7_pin_3_HSIOM
+#define FETDRV_CS_IRQ ioss_interrupts_gpio_7_IRQn
 #if defined (CY_USING_HAL)
-	#define CYBSP_CSD_SLD3_HAL_PORT_PIN P7_3
-	#define CYBSP_CS_SLD3_HAL_PORT_PIN CYBSP_CSD_SLD3_HAL_PORT_PIN
+	#define FETDRV_CS_HAL_PORT_PIN P7_3
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_CSD_SLD3 P7_3
-	#define CYBSP_CS_SLD3 CYBSP_CSD_SLD3
+	#define FETDRV_CS P7_3
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_CSD_SLD3_HAL_IRQ CYHAL_GPIO_IRQ_NONE
-	#define CYBSP_CS_SLD3_HAL_IRQ CYBSP_CSD_SLD3_HAL_IRQ
+	#define FETDRV_CS_HAL_IRQ CYHAL_GPIO_IRQ_NONE
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_CSD_SLD3_HAL_DIR CYHAL_GPIO_DIR_INPUT
-	#define CYBSP_CS_SLD3_HAL_DIR CYBSP_CSD_SLD3_HAL_DIR
+	#define FETDRV_CS_HAL_DIR CYHAL_GPIO_DIR_OUTPUT 
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_CSD_SLD3_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_ANALOG
-	#define CYBSP_CS_SLD3_HAL_DRIVEMODE CYBSP_CSD_SLD3_HAL_DRIVEMODE
+	#define FETDRV_CS_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_STRONG
 #endif //defined (CY_USING_HAL)
-#define CYBSP_CMOD_ENABLED 1U
-#define CYBSP_CMOD_PORT GPIO_PRT7
-#define CYBSP_CMOD_PORT_NUM 7U
-#define CYBSP_CMOD_PIN 7U
-#define CYBSP_CMOD_NUM 7U
-#define CYBSP_CMOD_DRIVEMODE CY_GPIO_DM_ANALOG
-#define CYBSP_CMOD_INIT_DRIVESTATE 1
-#ifndef ioss_0_port_7_pin_7_HSIOM
-	#define ioss_0_port_7_pin_7_HSIOM HSIOM_SEL_GPIO
-#endif
-#define CYBSP_CMOD_HSIOM ioss_0_port_7_pin_7_HSIOM
-#define CYBSP_CMOD_IRQ ioss_interrupts_gpio_7_IRQn
-#if defined (CY_USING_HAL)
-	#define CYBSP_CMOD_HAL_PORT_PIN P7_7
-#endif //defined (CY_USING_HAL)
-#if defined (CY_USING_HAL)
-	#define CYBSP_CMOD P7_7
-#endif //defined (CY_USING_HAL)
-#if defined (CY_USING_HAL)
-	#define CYBSP_CMOD_HAL_IRQ CYHAL_GPIO_IRQ_NONE
-#endif //defined (CY_USING_HAL)
-#if defined (CY_USING_HAL)
-	#define CYBSP_CMOD_HAL_DIR CYHAL_GPIO_DIR_INPUT
-#endif //defined (CY_USING_HAL)
-#if defined (CY_USING_HAL)
-	#define CYBSP_CMOD_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_ANALOG
-#endif //defined (CY_USING_HAL)
-#define CYBSP_CSD_SLD2_ENABLED 1U
-#define CYBSP_CS_SLD2_ENABLED CYBSP_CSD_SLD2_ENABLED
-#define CYBSP_CSD_SLD2_PORT GPIO_PRT8
-#define CYBSP_CS_SLD2_PORT CYBSP_CSD_SLD2_PORT
-#define CYBSP_CSD_SLD2_PORT_NUM 8U
-#define CYBSP_CS_SLD2_PORT_NUM CYBSP_CSD_SLD2_PORT_NUM
-#define CYBSP_CSD_SLD2_PIN 0U
-#define CYBSP_CS_SLD2_PIN CYBSP_CSD_SLD2_PIN
-#define CYBSP_CSD_SLD2_NUM 0U
-#define CYBSP_CS_SLD2_NUM CYBSP_CSD_SLD2_NUM
-#define CYBSP_CSD_SLD2_DRIVEMODE CY_GPIO_DM_ANALOG
-#define CYBSP_CS_SLD2_DRIVEMODE CYBSP_CSD_SLD2_DRIVEMODE
-#define CYBSP_CSD_SLD2_INIT_DRIVESTATE 1
-#define CYBSP_CS_SLD2_INIT_DRIVESTATE CYBSP_CSD_SLD2_INIT_DRIVESTATE
+#define FETDRV_PWM_BL_ENABLED 1U
+#define FETDRV_PWM_BL_PORT GPIO_PRT8
+#define FETDRV_PWM_BL_PORT_NUM 8U
+#define FETDRV_PWM_BL_PIN 0U
+#define FETDRV_PWM_BL_NUM 0U
+#define FETDRV_PWM_BL_DRIVEMODE CY_GPIO_DM_STRONG_IN_OFF
+#define FETDRV_PWM_BL_INIT_DRIVESTATE 0
 #ifndef ioss_0_port_8_pin_0_HSIOM
 	#define ioss_0_port_8_pin_0_HSIOM HSIOM_SEL_GPIO
 #endif
-#define CYBSP_CSD_SLD2_HSIOM ioss_0_port_8_pin_0_HSIOM
-#define CYBSP_CS_SLD2_HSIOM CYBSP_CSD_SLD2_HSIOM
-#define CYBSP_CSD_SLD2_IRQ ioss_interrupts_gpio_8_IRQn
-#define CYBSP_CS_SLD2_IRQ CYBSP_CSD_SLD2_IRQ
+#define FETDRV_PWM_BL_HSIOM ioss_0_port_8_pin_0_HSIOM
+#define FETDRV_PWM_BL_IRQ ioss_interrupts_gpio_8_IRQn
 #if defined (CY_USING_HAL)
-	#define CYBSP_CSD_SLD2_HAL_PORT_PIN P8_0
-	#define CYBSP_CS_SLD2_HAL_PORT_PIN CYBSP_CSD_SLD2_HAL_PORT_PIN
+	#define FETDRV_PWM_BL_HAL_PORT_PIN P8_0
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_CSD_SLD2 P8_0
-	#define CYBSP_CS_SLD2 CYBSP_CSD_SLD2
+	#define FETDRV_PWM_BL P8_0
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_CSD_SLD2_HAL_IRQ CYHAL_GPIO_IRQ_NONE
-	#define CYBSP_CS_SLD2_HAL_IRQ CYBSP_CSD_SLD2_HAL_IRQ
+	#define FETDRV_PWM_BL_HAL_IRQ CYHAL_GPIO_IRQ_NONE
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_CSD_SLD2_HAL_DIR CYHAL_GPIO_DIR_INPUT
-	#define CYBSP_CS_SLD2_HAL_DIR CYBSP_CSD_SLD2_HAL_DIR
+	#define FETDRV_PWM_BL_HAL_DIR CYHAL_GPIO_DIR_OUTPUT 
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_CSD_SLD2_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_ANALOG
-	#define CYBSP_CS_SLD2_HAL_DRIVEMODE CYBSP_CSD_SLD2_HAL_DRIVEMODE
+	#define FETDRV_PWM_BL_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_STRONG
 #endif //defined (CY_USING_HAL)
-#define CYBSP_CSD_SLD1_ENABLED 1U
-#define CYBSP_CS_SLD1_ENABLED CYBSP_CSD_SLD1_ENABLED
-#define CYBSP_CSD_SLD1_PORT GPIO_PRT8
-#define CYBSP_CS_SLD1_PORT CYBSP_CSD_SLD1_PORT
-#define CYBSP_CSD_SLD1_PORT_NUM 8U
-#define CYBSP_CS_SLD1_PORT_NUM CYBSP_CSD_SLD1_PORT_NUM
-#define CYBSP_CSD_SLD1_PIN 1U
-#define CYBSP_CS_SLD1_PIN CYBSP_CSD_SLD1_PIN
-#define CYBSP_CSD_SLD1_NUM 1U
-#define CYBSP_CS_SLD1_NUM CYBSP_CSD_SLD1_NUM
-#define CYBSP_CSD_SLD1_DRIVEMODE CY_GPIO_DM_ANALOG
-#define CYBSP_CS_SLD1_DRIVEMODE CYBSP_CSD_SLD1_DRIVEMODE
-#define CYBSP_CSD_SLD1_INIT_DRIVESTATE 1
-#define CYBSP_CS_SLD1_INIT_DRIVESTATE CYBSP_CSD_SLD1_INIT_DRIVESTATE
+#define FETDRV_PWM_BH_ENABLED 1U
+#define FETDRV_PWM_BH_PORT GPIO_PRT8
+#define FETDRV_PWM_BH_PORT_NUM 8U
+#define FETDRV_PWM_BH_PIN 1U
+#define FETDRV_PWM_BH_NUM 1U
+#define FETDRV_PWM_BH_DRIVEMODE CY_GPIO_DM_STRONG_IN_OFF
+#define FETDRV_PWM_BH_INIT_DRIVESTATE 0
 #ifndef ioss_0_port_8_pin_1_HSIOM
 	#define ioss_0_port_8_pin_1_HSIOM HSIOM_SEL_GPIO
 #endif
-#define CYBSP_CSD_SLD1_HSIOM ioss_0_port_8_pin_1_HSIOM
-#define CYBSP_CS_SLD1_HSIOM CYBSP_CSD_SLD1_HSIOM
-#define CYBSP_CSD_SLD1_IRQ ioss_interrupts_gpio_8_IRQn
-#define CYBSP_CS_SLD1_IRQ CYBSP_CSD_SLD1_IRQ
+#define FETDRV_PWM_BH_HSIOM ioss_0_port_8_pin_1_HSIOM
+#define FETDRV_PWM_BH_IRQ ioss_interrupts_gpio_8_IRQn
 #if defined (CY_USING_HAL)
-	#define CYBSP_CSD_SLD1_HAL_PORT_PIN P8_1
-	#define CYBSP_CS_SLD1_HAL_PORT_PIN CYBSP_CSD_SLD1_HAL_PORT_PIN
+	#define FETDRV_PWM_BH_HAL_PORT_PIN P8_1
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_CSD_SLD1 P8_1
-	#define CYBSP_CS_SLD1 CYBSP_CSD_SLD1
+	#define FETDRV_PWM_BH P8_1
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_CSD_SLD1_HAL_IRQ CYHAL_GPIO_IRQ_NONE
-	#define CYBSP_CS_SLD1_HAL_IRQ CYBSP_CSD_SLD1_HAL_IRQ
+	#define FETDRV_PWM_BH_HAL_IRQ CYHAL_GPIO_IRQ_NONE
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_CSD_SLD1_HAL_DIR CYHAL_GPIO_DIR_INPUT
-	#define CYBSP_CS_SLD1_HAL_DIR CYBSP_CSD_SLD1_HAL_DIR
+	#define FETDRV_PWM_BH_HAL_DIR CYHAL_GPIO_DIR_OUTPUT 
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_CSD_SLD1_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_ANALOG
-	#define CYBSP_CS_SLD1_HAL_DRIVEMODE CYBSP_CSD_SLD1_HAL_DRIVEMODE
+	#define FETDRV_PWM_BH_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_STRONG
+#endif //defined (CY_USING_HAL)
+#define FETDRV_ENABLE_ENABLED 1U
+#define FETDRV_ENABLE_PORT GPIO_PRT9
+#define FETDRV_ENABLE_PORT_NUM 9U
+#define FETDRV_ENABLE_PIN 0U
+#define FETDRV_ENABLE_NUM 0U
+#define FETDRV_ENABLE_DRIVEMODE CY_GPIO_DM_STRONG
+#define FETDRV_ENABLE_INIT_DRIVESTATE 0
+#ifndef ioss_0_port_9_pin_0_HSIOM
+	#define ioss_0_port_9_pin_0_HSIOM HSIOM_SEL_GPIO
+#endif
+#define FETDRV_ENABLE_HSIOM ioss_0_port_9_pin_0_HSIOM
+#define FETDRV_ENABLE_IRQ ioss_interrupts_gpio_9_IRQn
+#if defined (CY_USING_HAL)
+	#define FETDRV_ENABLE_HAL_PORT_PIN P9_0
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_A8 (P9_0)
-	#define CYBSP_J2_2 CYBSP_A8
+	#define FETDRV_ENABLE P9_0
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_A9 (P9_1)
-	#define CYBSP_J2_4 CYBSP_A9
+	#define FETDRV_ENABLE_HAL_IRQ CYHAL_GPIO_IRQ_NONE
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_A12 (P9_2)
-	#define CYBSP_J2_10 CYBSP_A12
+	#define FETDRV_ENABLE_HAL_DIR CYHAL_GPIO_DIR_BIDIRECTIONAL 
 #endif //defined (CY_USING_HAL)
-#define CYBSP_A13_ENABLED 1U
-#define CYBSP_J2_12_ENABLED CYBSP_A13_ENABLED
-#define CYBSP_CSD_SLD0_ENABLED CYBSP_A13_ENABLED
-#define CYBSP_CS_SLD0_ENABLED CYBSP_A13_ENABLED
-#define CYBSP_A13_PORT GPIO_PRT9
-#define CYBSP_J2_12_PORT CYBSP_A13_PORT
-#define CYBSP_CSD_SLD0_PORT CYBSP_A13_PORT
-#define CYBSP_CS_SLD0_PORT CYBSP_A13_PORT
-#define CYBSP_A13_PORT_NUM 9U
-#define CYBSP_J2_12_PORT_NUM CYBSP_A13_PORT_NUM
-#define CYBSP_CSD_SLD0_PORT_NUM CYBSP_A13_PORT_NUM
-#define CYBSP_CS_SLD0_PORT_NUM CYBSP_A13_PORT_NUM
-#define CYBSP_A13_PIN 3U
-#define CYBSP_J2_12_PIN CYBSP_A13_PIN
-#define CYBSP_CSD_SLD0_PIN CYBSP_A13_PIN
-#define CYBSP_CS_SLD0_PIN CYBSP_A13_PIN
-#define CYBSP_A13_NUM 3U
-#define CYBSP_J2_12_NUM CYBSP_A13_NUM
-#define CYBSP_CSD_SLD0_NUM CYBSP_A13_NUM
-#define CYBSP_CS_SLD0_NUM CYBSP_A13_NUM
-#define CYBSP_A13_DRIVEMODE CY_GPIO_DM_ANALOG
-#define CYBSP_J2_12_DRIVEMODE CYBSP_A13_DRIVEMODE
-#define CYBSP_CSD_SLD0_DRIVEMODE CYBSP_A13_DRIVEMODE
-#define CYBSP_CS_SLD0_DRIVEMODE CYBSP_A13_DRIVEMODE
-#define CYBSP_A13_INIT_DRIVESTATE 1
-#define CYBSP_J2_12_INIT_DRIVESTATE CYBSP_A13_INIT_DRIVESTATE
-#define CYBSP_CSD_SLD0_INIT_DRIVESTATE CYBSP_A13_INIT_DRIVESTATE
-#define CYBSP_CS_SLD0_INIT_DRIVESTATE CYBSP_A13_INIT_DRIVESTATE
+#if defined (CY_USING_HAL)
+	#define FETDRV_ENABLE_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_STRONG
+#endif //defined (CY_USING_HAL)
+#define FETDRV_nFAULT_ENABLED 1U
+#define FETDRV_nFAULT_PORT GPIO_PRT9
+#define FETDRV_nFAULT_PORT_NUM 9U
+#define FETDRV_nFAULT_PIN 1U
+#define FETDRV_nFAULT_NUM 1U
+#define FETDRV_nFAULT_DRIVEMODE CY_GPIO_DM_PULLUP_DOWN
+#define FETDRV_nFAULT_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_9_pin_1_HSIOM
+	#define ioss_0_port_9_pin_1_HSIOM HSIOM_SEL_GPIO
+#endif
+#define FETDRV_nFAULT_HSIOM ioss_0_port_9_pin_1_HSIOM
+#define FETDRV_nFAULT_IRQ ioss_interrupts_gpio_9_IRQn
+#if defined (CY_USING_HAL)
+	#define FETDRV_nFAULT_HAL_PORT_PIN P9_1
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define FETDRV_nFAULT P9_1
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define FETDRV_nFAULT_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define FETDRV_nFAULT_HAL_DIR CYHAL_GPIO_DIR_BIDIRECTIONAL 
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define FETDRV_nFAULT_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_PULLUPDOWN
+#endif //defined (CY_USING_HAL)
+#define FETDRV_VREF_ENABLED 1U
+#define FETDRV_VREF_PORT GPIO_PRT9
+#define FETDRV_VREF_PORT_NUM 9U
+#define FETDRV_VREF_PIN 2U
+#define FETDRV_VREF_NUM 2U
+#define FETDRV_VREF_DRIVEMODE CY_GPIO_DM_ANALOG
+#define FETDRV_VREF_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_9_pin_2_HSIOM
+	#define ioss_0_port_9_pin_2_HSIOM HSIOM_SEL_GPIO
+#endif
+#define FETDRV_VREF_HSIOM ioss_0_port_9_pin_2_HSIOM
+#define FETDRV_VREF_IRQ ioss_interrupts_gpio_9_IRQn
+#if defined (CY_USING_HAL)
+	#define FETDRV_VREF_HAL_PORT_PIN P9_2
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define FETDRV_VREF P9_2
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define FETDRV_VREF_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define FETDRV_VREF_HAL_DIR CYHAL_GPIO_DIR_INPUT 
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define FETDRV_VREF_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_ANALOG
+#endif //defined (CY_USING_HAL)
+#define FETDRV_BRAKE_ENABLED 1U
+#define FETDRV_BRAKE_PORT GPIO_PRT9
+#define FETDRV_BRAKE_PORT_NUM 9U
+#define FETDRV_BRAKE_PIN 3U
+#define FETDRV_BRAKE_NUM 3U
+#define FETDRV_BRAKE_DRIVEMODE CY_GPIO_DM_STRONG
+#define FETDRV_BRAKE_INIT_DRIVESTATE 0
 #ifndef ioss_0_port_9_pin_3_HSIOM
 	#define ioss_0_port_9_pin_3_HSIOM HSIOM_SEL_GPIO
 #endif
-#define CYBSP_A13_HSIOM ioss_0_port_9_pin_3_HSIOM
-#define CYBSP_J2_12_HSIOM CYBSP_A13_HSIOM
-#define CYBSP_CSD_SLD0_HSIOM CYBSP_A13_HSIOM
-#define CYBSP_CS_SLD0_HSIOM CYBSP_A13_HSIOM
-#define CYBSP_A13_IRQ ioss_interrupts_gpio_9_IRQn
-#define CYBSP_J2_12_IRQ CYBSP_A13_IRQ
-#define CYBSP_CSD_SLD0_IRQ CYBSP_A13_IRQ
-#define CYBSP_CS_SLD0_IRQ CYBSP_A13_IRQ
+#define FETDRV_BRAKE_HSIOM ioss_0_port_9_pin_3_HSIOM
+#define FETDRV_BRAKE_IRQ ioss_interrupts_gpio_9_IRQn
 #if defined (CY_USING_HAL)
-	#define CYBSP_A13_HAL_PORT_PIN P9_3
-	#define CYBSP_J2_12_HAL_PORT_PIN CYBSP_A13_HAL_PORT_PIN
-	#define CYBSP_CSD_SLD0_HAL_PORT_PIN CYBSP_A13_HAL_PORT_PIN
-	#define CYBSP_CS_SLD0_HAL_PORT_PIN CYBSP_A13_HAL_PORT_PIN
+	#define FETDRV_BRAKE_HAL_PORT_PIN P9_3
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_A13 P9_3
-	#define CYBSP_J2_12 CYBSP_A13
-	#define CYBSP_CSD_SLD0 CYBSP_A13
-	#define CYBSP_CS_SLD0 CYBSP_A13
+	#define FETDRV_BRAKE P9_3
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_A13_HAL_IRQ CYHAL_GPIO_IRQ_NONE
-	#define CYBSP_J2_12_HAL_IRQ CYBSP_A13_HAL_IRQ
-	#define CYBSP_CSD_SLD0_HAL_IRQ CYBSP_A13_HAL_IRQ
-	#define CYBSP_CS_SLD0_HAL_IRQ CYBSP_A13_HAL_IRQ
+	#define FETDRV_BRAKE_HAL_IRQ CYHAL_GPIO_IRQ_NONE
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_A13_HAL_DIR CYHAL_GPIO_DIR_INPUT
-	#define CYBSP_J2_12_HAL_DIR CYBSP_A13_HAL_DIR
-	#define CYBSP_CSD_SLD0_HAL_DIR CYBSP_A13_HAL_DIR
-	#define CYBSP_CS_SLD0_HAL_DIR CYBSP_A13_HAL_DIR
+	#define FETDRV_BRAKE_HAL_DIR CYHAL_GPIO_DIR_BIDIRECTIONAL 
 #endif //defined (CY_USING_HAL)
 #if defined (CY_USING_HAL)
-	#define CYBSP_A13_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_ANALOG
-	#define CYBSP_J2_12_HAL_DRIVEMODE CYBSP_A13_HAL_DRIVEMODE
-	#define CYBSP_CSD_SLD0_HAL_DRIVEMODE CYBSP_A13_HAL_DRIVEMODE
-	#define CYBSP_CS_SLD0_HAL_DRIVEMODE CYBSP_A13_HAL_DRIVEMODE
+	#define FETDRV_BRAKE_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_STRONG
 #endif //defined (CY_USING_HAL)
+#define FETDRV_GAIN_AZ_ENABLED 1U
+#define FETDRV_GAIN_AZ_PORT GPIO_PRT9
+#define FETDRV_GAIN_AZ_PORT_NUM 9U
+#define FETDRV_GAIN_AZ_PIN 4U
+#define FETDRV_GAIN_AZ_NUM 4U
+#define FETDRV_GAIN_AZ_DRIVEMODE CY_GPIO_DM_STRONG_IN_OFF
+#define FETDRV_GAIN_AZ_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_9_pin_4_HSIOM
+	#define ioss_0_port_9_pin_4_HSIOM HSIOM_SEL_GPIO
+#endif
+#define FETDRV_GAIN_AZ_HSIOM ioss_0_port_9_pin_4_HSIOM
+#define FETDRV_GAIN_AZ_IRQ ioss_interrupts_gpio_9_IRQn
+#if defined (CY_USING_HAL)
+	#define FETDRV_GAIN_AZ_HAL_PORT_PIN P9_4
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define FETDRV_GAIN_AZ P9_4
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define FETDRV_GAIN_AZ_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define FETDRV_GAIN_AZ_HAL_DIR CYHAL_GPIO_DIR_OUTPUT 
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define FETDRV_GAIN_AZ_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_STRONG
+#endif //defined (CY_USING_HAL)
+#define CANFD_nFAULT_ENABLED 1U
+#define CANFD_nFAULT_PORT GPIO_PRT9
+#define CANFD_nFAULT_PORT_NUM 9U
+#define CANFD_nFAULT_PIN 5U
+#define CANFD_nFAULT_NUM 5U
+#define CANFD_nFAULT_DRIVEMODE CY_GPIO_DM_HIGHZ
+#define CANFD_nFAULT_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_9_pin_5_HSIOM
+	#define ioss_0_port_9_pin_5_HSIOM HSIOM_SEL_GPIO
+#endif
+#define CANFD_nFAULT_HSIOM ioss_0_port_9_pin_5_HSIOM
+#define CANFD_nFAULT_IRQ ioss_interrupts_gpio_9_IRQn
+#if defined (CY_USING_HAL)
+	#define CANFD_nFAULT_HAL_PORT_PIN P9_5
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define CANFD_nFAULT P9_5
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define CANFD_nFAULT_HAL_IRQ CYHAL_GPIO_IRQ_NONE
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define CANFD_nFAULT_HAL_DIR CYHAL_GPIO_DIR_INPUT 
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	#define CANFD_nFAULT_HAL_DRIVEMODE CYHAL_GPIO_DRIVE_NONE
+#endif //defined (CY_USING_HAL)
+#define SMART_IO_ENABLED 1U
+#define SMART_IO_HW SMARTIO_PRT9
 
-extern const cy_stc_gpio_pin_config_t CYBSP_WCO_IN_config;
+extern const cy_stc_gpio_pin_config_t ENCODER_QOAD_B1_config;
 #if defined (CY_USING_HAL)
-	extern const cyhal_resource_inst_t CYBSP_WCO_IN_obj;
+	extern const cyhal_resource_inst_t ENCODER_QOAD_B1_obj;
 #endif //defined (CY_USING_HAL)
-extern const cy_stc_gpio_pin_config_t CYBSP_WCO_OUT_config;
+extern const cy_stc_gpio_pin_config_t ENCODER_QOAD_A1_config;
 #if defined (CY_USING_HAL)
-	extern const cyhal_resource_inst_t CYBSP_WCO_OUT_obj;
+	extern const cyhal_resource_inst_t ENCODER_QOAD_A1_obj;
 #endif //defined (CY_USING_HAL)
-extern const cy_stc_gpio_pin_config_t CYBSP_SWDIO_config;
+extern const cy_stc_gpio_pin_config_t ENCODER_QOAD_I1_config;
 #if defined (CY_USING_HAL)
-	extern const cyhal_resource_inst_t CYBSP_SWDIO_obj;
+	extern const cyhal_resource_inst_t ENCODER_QOAD_I1_obj;
 #endif //defined (CY_USING_HAL)
-extern const cy_stc_gpio_pin_config_t CYBSP_SWDCK_config;
+extern const cy_stc_gpio_pin_config_t ENCODER_QOAD_I2_config;
 #if defined (CY_USING_HAL)
-	extern const cyhal_resource_inst_t CYBSP_SWDCK_obj;
+	extern const cyhal_resource_inst_t ENCODER_QOAD_I2_obj;
 #endif //defined (CY_USING_HAL)
-extern const cy_stc_gpio_pin_config_t CYBSP_CSD_BTN0_config;
-#define CYBSP_CS_BTN0_config CYBSP_CSD_BTN0_config
+extern const cy_stc_gpio_pin_config_t ENCODER_QOAD_B2_config;
 #if defined (CY_USING_HAL)
-	extern const cyhal_resource_inst_t CYBSP_CSD_BTN0_obj;
-	#define CYBSP_CS_BTN0_obj CYBSP_CSD_BTN0_obj
+	extern const cyhal_resource_inst_t ENCODER_QOAD_B2_obj;
 #endif //defined (CY_USING_HAL)
-extern const cy_stc_gpio_pin_config_t CYBSP_CSD_BTN1_config;
-#define CYBSP_CS_BTN1_config CYBSP_CSD_BTN1_config
+extern const cy_stc_gpio_pin_config_t ENCODER_QOAD_A2_config;
 #if defined (CY_USING_HAL)
-	extern const cyhal_resource_inst_t CYBSP_CSD_BTN1_obj;
-	#define CYBSP_CS_BTN1_obj CYBSP_CSD_BTN1_obj
+	extern const cyhal_resource_inst_t ENCODER_QOAD_A2_obj;
 #endif //defined (CY_USING_HAL)
-extern const cy_stc_gpio_pin_config_t CYBSP_CSD_SLD4_config;
-#define CYBSP_CS_SLD4_config CYBSP_CSD_SLD4_config
+extern const cy_stc_gpio_pin_config_t NC_0_config;
 #if defined (CY_USING_HAL)
-	extern const cyhal_resource_inst_t CYBSP_CSD_SLD4_obj;
-	#define CYBSP_CS_SLD4_obj CYBSP_CSD_SLD4_obj
+	extern const cyhal_resource_inst_t NC_0_obj;
 #endif //defined (CY_USING_HAL)
-extern const cy_stc_gpio_pin_config_t CYBSP_CSD_SLD3_config;
-#define CYBSP_CS_SLD3_config CYBSP_CSD_SLD3_config
+extern const cy_stc_gpio_pin_config_t ADC_ISENSE_C_config;
 #if defined (CY_USING_HAL)
-	extern const cyhal_resource_inst_t CYBSP_CSD_SLD3_obj;
-	#define CYBSP_CS_SLD3_obj CYBSP_CSD_SLD3_obj
+	extern const cyhal_resource_inst_t ADC_ISENSE_C_obj;
 #endif //defined (CY_USING_HAL)
-extern const cy_stc_gpio_pin_config_t CYBSP_CMOD_config;
+extern const cy_stc_gpio_pin_config_t ADC_ISENSE_B_config;
 #if defined (CY_USING_HAL)
-	extern const cyhal_resource_inst_t CYBSP_CMOD_obj;
+	extern const cyhal_resource_inst_t ADC_ISENSE_B_obj;
 #endif //defined (CY_USING_HAL)
-extern const cy_stc_gpio_pin_config_t CYBSP_CSD_SLD2_config;
-#define CYBSP_CS_SLD2_config CYBSP_CSD_SLD2_config
+extern const cy_stc_gpio_pin_config_t ADC_ISENSE_A_config;
 #if defined (CY_USING_HAL)
-	extern const cyhal_resource_inst_t CYBSP_CSD_SLD2_obj;
-	#define CYBSP_CS_SLD2_obj CYBSP_CSD_SLD2_obj
+	extern const cyhal_resource_inst_t ADC_ISENSE_A_obj;
 #endif //defined (CY_USING_HAL)
-extern const cy_stc_gpio_pin_config_t CYBSP_CSD_SLD1_config;
-#define CYBSP_CS_SLD1_config CYBSP_CSD_SLD1_config
+extern const cy_stc_gpio_pin_config_t ADC_VBUS_SENSE_config;
 #if defined (CY_USING_HAL)
-	extern const cyhal_resource_inst_t CYBSP_CSD_SLD1_obj;
-	#define CYBSP_CS_SLD1_obj CYBSP_CSD_SLD1_obj
+	extern const cyhal_resource_inst_t ADC_VBUS_SENSE_obj;
 #endif //defined (CY_USING_HAL)
-extern const cy_stc_gpio_pin_config_t CYBSP_A13_config;
-#define CYBSP_J2_12_config CYBSP_A13_config
-#define CYBSP_CSD_SLD0_config CYBSP_A13_config
-#define CYBSP_CS_SLD0_config CYBSP_A13_config
+extern const cy_stc_gpio_pin_config_t ADC_TEMP1_config;
 #if defined (CY_USING_HAL)
-	extern const cyhal_resource_inst_t CYBSP_A13_obj;
-	#define CYBSP_J2_12_obj CYBSP_A13_obj
-	#define CYBSP_CSD_SLD0_obj CYBSP_A13_obj
-	#define CYBSP_CS_SLD0_obj CYBSP_A13_obj
+	extern const cyhal_resource_inst_t ADC_TEMP1_obj;
 #endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t GPIO1_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t GPIO1_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t GPIO0_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t GPIO0_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t PWM_AL_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t PWM_AL_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t PWM_AH_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t PWM_AH_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t NC_4_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t NC_4_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t ECO_IN_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t ECO_IN_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t ECO_OUT_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t ECO_OUT_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t ENC_SSC_DO_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t ENC_SSC_DO_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t ENC_SSC_DI_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t ENC_SSC_DI_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t ENC_SSC_SCK_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t ENC_SSC_SCK_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t ENC_SSC_CS1_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t ENC_SSC_CS1_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t ENC_SSC_CS2_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t ENC_SSC_CS2_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t CANF_SILENT_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t CANF_SILENT_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t LED0_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t LED0_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t LED1_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t LED1_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t DEBUG_UART_RX_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t DEBUG_UART_RX_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t DEBUG_UART_TX_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t DEBUG_UART_TX_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t CANFD_RX_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t CANFD_RX_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t CANFD_TX_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t CANFD_TX_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t GPIO2_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t GPIO2_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t GPIO3_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t GPIO3_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t FETDRV_PWM_CL_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t FETDRV_PWM_CL_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t FETDRV_PWM_CH_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t FETDRV_PWM_CH_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t SWO_config;
+#define DEBUG_I2C_SCL_config SWO_config
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t SWO_obj;
+	#define DEBUG_I2C_SCL_obj SWO_obj
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t TDI_config;
+#define DEBUG_I2C_SDA_config TDI_config
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t TDI_obj;
+	#define DEBUG_I2C_SDA_obj TDI_obj
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t SWDIO_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t SWDIO_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t SWDCLK_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t SWDCLK_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t FETDRV_MOSI_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t FETDRV_MOSI_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t FETDRV_MISO_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t FETDRV_MISO_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t FETDRV_SCK_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t FETDRV_SCK_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t FETDRV_CS_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t FETDRV_CS_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t FETDRV_PWM_BL_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t FETDRV_PWM_BL_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t FETDRV_PWM_BH_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t FETDRV_PWM_BH_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t FETDRV_ENABLE_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t FETDRV_ENABLE_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t FETDRV_nFAULT_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t FETDRV_nFAULT_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t FETDRV_VREF_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t FETDRV_VREF_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t FETDRV_BRAKE_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t FETDRV_BRAKE_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t FETDRV_GAIN_AZ_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t FETDRV_GAIN_AZ_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_gpio_pin_config_t CANFD_nFAULT_config;
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t CANFD_nFAULT_obj;
+#endif //defined (CY_USING_HAL)
+extern const cy_stc_smartio_lutcfg_t SMART_IO_lutCfg4;
+extern const cy_stc_smartio_lutcfg_t SMART_IO_lutCfg5;
+extern const cy_stc_smartio_ducfg_t SMART_IO_duCfg;
+extern const cy_stc_smartio_config_t SMART_IO_config;
 
 void init_cycfg_pins(void);
 

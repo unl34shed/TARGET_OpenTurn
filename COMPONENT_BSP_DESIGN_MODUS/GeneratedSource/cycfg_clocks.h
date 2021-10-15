@@ -4,13 +4,13 @@
 * Description:
 * Clock configuration
 * This file was automatically generated and should not be modified.
-* Tools Package 2.2.0.2790
-* latest-v2.X 2.0.0.6211
-* personalities 3.0.0.0
-* udd 3.0.0.562
+* Tools Package 2.3.0.4276
+* mtb-pdl-cat1 2.2.1.9614
+* personalities 4.0.0.0
+* udd 3.0.0.1125
 *
 ********************************************************************************
-* Copyright 2020 Cypress Semiconductor Corporation
+* Copyright 2021 Cypress Semiconductor Corporation
 * SPDX-License-Identifier: Apache-2.0
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -39,16 +39,60 @@
 extern "C" {
 #endif
 
-#define CYBSP_CSD_CLK_DIV_ENABLED 1U
-#define CYBSP_CS_CLK_DIV_ENABLED CYBSP_CSD_CLK_DIV_ENABLED
-#define CYBSP_CSD_CLK_DIV_HW CY_SYSCLK_DIV_8_BIT
-#define CYBSP_CS_CLK_DIV_HW CYBSP_CSD_CLK_DIV_HW
-#define CYBSP_CSD_CLK_DIV_NUM 0U
-#define CYBSP_CS_CLK_DIV_NUM CYBSP_CSD_CLK_DIV_NUM
+#define CLK_DEBUG_UART_ENABLED 1U
+#define CLK_DEBUG_UART_HW CY_SYSCLK_DIV_16_BIT
+#define CLK_DEBUG_UART_NUM 0U
+#define CLK_DEBUG_I2C_ENABLED 1U
+#define CLK_DEBUG_I2C_HW CY_SYSCLK_DIV_16_BIT
+#define CLK_DEBUG_I2C_NUM 1U
+#define CLK_CANFD_ENABLED 1U
+#define CLK_CANFD_HW CY_SYSCLK_DIV_16_BIT
+#define CLK_CANFD_NUM 2U
+#define CLK_ADC_ENABLED 1U
+#define CLK_ADC_HW CY_SYSCLK_DIV_16_BIT
+#define CLK_ADC_NUM 3U
+#define CLK_VREF_ENABLED 1U
+#define CLK_VREF_HW CY_SYSCLK_DIV_16_BIT
+#define CLK_VREF_NUM 4U
+#define CLK_PWM_ENABLED 1U
+#define CLK_PWM_HW CY_SYSCLK_DIV_8_BIT
+#define CLK_PWM_NUM 0U
+#define CLK_FETDRV_SPI_ENABLED 1U
+#define CLK_FETDRV_SPI_HW CY_SYSCLK_DIV_8_BIT
+#define CLK_FETDRV_SPI_NUM 1U
+#define CLK_ENC_SPI_ENABLED 1U
+#define CLK_ENC_SPI_HW CY_SYSCLK_DIV_8_BIT
+#define CLK_ENC_SPI_NUM 2U
+#define CLK_ENC_ENABLED 1U
+#define CLK_ENC_HW CY_SYSCLK_DIV_8_BIT
+#define CLK_ENC_NUM 3U
 
 #if defined (CY_USING_HAL)
-	extern const cyhal_resource_inst_t CYBSP_CSD_CLK_DIV_obj;
-	#define CYBSP_CS_CLK_DIV_obj CYBSP_CSD_CLK_DIV_obj
+	extern const cyhal_resource_inst_t CLK_DEBUG_UART_obj;
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t CLK_DEBUG_I2C_obj;
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t CLK_CANFD_obj;
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t CLK_ADC_obj;
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t CLK_VREF_obj;
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t CLK_PWM_obj;
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t CLK_FETDRV_SPI_obj;
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t CLK_ENC_SPI_obj;
+#endif //defined (CY_USING_HAL)
+#if defined (CY_USING_HAL)
+	extern const cyhal_resource_inst_t CLK_ENC_obj;
 #endif //defined (CY_USING_HAL)
 
 void init_cycfg_clocks(void);

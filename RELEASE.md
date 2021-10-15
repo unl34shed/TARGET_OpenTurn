@@ -1,10 +1,10 @@
-# CY8CKIT-062S4 BSP Release Notes
-The PSoC 62S4 Pioneer Kit is a low-cost hardware platform that enables design and debug of the PSoC 62S4 Line (CY8C6244LQI-S4D92).
+# CY8CKIT-062-BLE BSP Release Notes
+The PSoC 6 BLE Pioneer Kit is a low-cost hardware platform that enables design and debug of the PSoC 63 Line (CY8C6347BZI-BLD53).
 
 NOTE: BSPs are versioned by family. This means that version 1.2.0 of any BSP in a family (eg: PSoC 6) will have the same software maturity level. However, not all updates are necessarily applicable for each BSP in the family so not all version numbers will exist for each board. Additionally, new BSPs may not start at version 1.0.0. In the event of adding a common feature across all BSPs, the libraries are assigned the same version number. For example if BSP_A is at v1.3.0 and BSP_B is at v1.2.0, the event will trigger a version update to v1.4.0 for both BSP_A and BSP_B. This allows the common feature to be tracked in a consistent way.
 
 ### What's Included?
-The CY8CKIT-062S4 library includes the following:
+The CY8CKIT-062-BLE library includes the following:
 * BSP specific makefile to configure the build process for the board
 * cybsp.c/h files to initialize the board and any system peripherals
 * cybsp_types.h file describing basic board setup
@@ -15,13 +15,6 @@ The CY8CKIT-062S4 library includes the following:
 * API documentation
 
 ### What Changed?
-#### v2.3.0
-* Add new connectivity components for easier board customization
-* Simplify BT configuration settings for boards that support it
-* Minor branding updates
-#### v2.2.0
-* Updated PSoC 64 linker sections to match secure policy settings
-* Minor documentation updates
 #### v2.1.0
 * Added component CAT1 to all boards
 * Added new components for connectivity chips
@@ -61,7 +54,7 @@ NOTE: This requires psoc6hal 1.2.0 or later
 * Initial release
 
 ### Supported Software and Tools
-This version of the CY8CKIT-062S4 BSP was validated for compatibility with the following Software and Tools:
+This version of the CY8CKIT-062-BLE BSP was validated for compatibility with the following Software and Tools:
 
 | Software and Tools                        | Version |
 | :---                                      | :----:  |
@@ -73,13 +66,13 @@ This version of the CY8CKIT-062S4 BSP was validated for compatibility with the f
 Minimum required ModusToolbox Software Environment: v2.2
 
 ### More information
-* [CY8CKIT-062S4 BSP API Reference Manual][api]
-* [CY8CKIT-062S4 Documentation](http://www.cypress.com/CY8CKIT-062S4)
+* [CY8CKIT-062-BLE BSP API Reference Manual][api]
+* [CY8CKIT-062-BLE Documentation](http://www.cypress.com/documentation/development-kitsboards/psoc-6-ble-pioneer-kit)
 * [Cypress Semiconductor, an Infineon Technologies Company](http://www.cypress.com)
-* [Infineon GitHub](https://github.com/infineon)
+* [Cypress Semiconductor GitHub](https://github.com/cypresssemiconductorco)
 * [ModusToolbox](https://www.cypress.com/products/modustoolbox-software-environment)
 
-[api]: https://infineon.github.io/TARGET_CY8CKIT-062S4/html/modules.html
+[api]: modules.html
 
 ---
-© Cypress Semiconductor Corporation (an Infineon company) or an affiliate of Cypress Semiconductor Corporation, 2019-2021.
+© Cypress Semiconductor Corporation, 2019-2021.
